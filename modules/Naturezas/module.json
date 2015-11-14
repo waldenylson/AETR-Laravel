@@ -1,0 +1,15 @@
+{
+    "name": "Naturezas",
+    "alias": "naturezas",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Naturezas\\Providers\\NaturezasServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

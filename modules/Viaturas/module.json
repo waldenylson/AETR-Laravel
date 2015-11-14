@@ -1,0 +1,15 @@
+{
+    "name": "Viaturas",
+    "alias": "viaturas",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Viaturas\\Providers\\ViaturasServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

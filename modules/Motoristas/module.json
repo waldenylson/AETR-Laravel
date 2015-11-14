@@ -1,0 +1,15 @@
+{
+    "name": "Motoristas",
+    "alias": "motoristas",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Motoristas\\Providers\\MotoristasServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

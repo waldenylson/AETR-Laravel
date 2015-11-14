@@ -1,0 +1,15 @@
+{
+    "name": "Despachantes",
+    "alias": "despachantes",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Despachantes\\Providers\\DespachantesServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

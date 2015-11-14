@@ -145,6 +145,17 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Modularização com Pingpong Sky
+         * https://sky.pingpong-labs.com
+         */
+        Pingpong\Modules\ModulesServiceProvider::class,
+
+        /*
+         * LaravelCollective Forms & HTML
+         * http://laravelcollective.com/
+         */
+        Collective\Html\HtmlServiceProvider::class,
     ],
 
     /*
@@ -193,6 +204,19 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+
+        /*
+         * Modularização com Pingpong Sky
+         * https://sky.pingpong-labs.com
+         */
+        'Module'    => Pingpong\Modules\Facades\Module::class,
+
+        /*
+         * LaravelCollective Forms & HTML
+         * http://laravelcollective.com/
+         */
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 
