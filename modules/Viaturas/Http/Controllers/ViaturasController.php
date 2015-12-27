@@ -1,6 +1,8 @@
 <?php namespace Modules\Viaturas\Http\Controllers;
 
+use Modules\Viaturas\Http\Requests\StoreViaturasPostRequest;
 use Pingpong\Modules\Routing\Controller;
+use Modules\Viaturas\Entities\Viaturas as Viaturas;
 
 class ViaturasController extends Controller
 {
@@ -11,7 +13,11 @@ class ViaturasController extends Controller
      */
     public function index()
     {
-        //
+        $viaturas = Viaturas::paginate(5);
+
+        //dd($viaturas);
+
+        return view('viaturas::index')->with(compact('viaturas'));
     }
 
     /**
@@ -21,29 +27,20 @@ class ViaturasController extends Controller
      */
     public function create()
     {
-        return view('viaturas::viaturas.create');
+        return view('viaturas::create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  Request  $request
+     * @param  StoreViaturasPostRequest  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(StoreViaturasPostRequest $request)
     {
-        dd($request);
-    }
+        $viatura = Viaturas::create($request->all());
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect()->back()->with('message', 'Registro Inserido com Sucesso!');
     }
 
     /**
@@ -54,19 +51,23 @@ class ViaturasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $viatura = Viaturas::findOrFail($id);
+
+        return view('viaturas::edit')->with(compact('viatura'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
+     * @param  StoreViaturasPostRequest  $request
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreViaturasPostRequest $request, $id)
     {
-        //
+        $viatura = Viaturas::findOrFail($id)->update($request->all());
+
+        return redirect()->back()->with('message', 'Registro Atualizado com Sucesso!');
     }
 
     /**
@@ -77,6 +78,16 @@ class ViaturasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $viatura = Viaturas::findOrFail($id);
+
+        if ($viatura->delete())
+        {
+
+            return redirect()->back()->with('message', 'Registro Removido com Sucesso!');
+        }
+        else
+        {
+            return redirect()->back()->with('message', 'Erro ao Tentar Remover o Registro!');
+        }
     }
 }

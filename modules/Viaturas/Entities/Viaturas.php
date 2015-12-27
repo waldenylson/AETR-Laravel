@@ -4,6 +4,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class viaturas extends Model {
 
-    protected $fillable = [];
+    protected $guarded = ['_token'];
 
 }

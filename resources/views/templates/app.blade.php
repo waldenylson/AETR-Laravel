@@ -9,7 +9,8 @@
 
 	<link rel="stylesheet" href="{!! asset('bower_components/font-awesome/css/font-awesome.css') !!}">
 	<link rel="stylesheet" media="screen" type="text/css" href="{!! asset('bower_components/fancybox/source/jquery.fancybox.css?v=2.1.5') !!}">
-	<style>body{margin-top: 70px;}</style>
+
+    <style>body{margin-top: 70px;}</style>
 </head>
 <body class="container">
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -31,9 +32,9 @@
                        <i class="fa fa-keyboard-o">&nbsp;&nbsp;CADASTROS&nbsp;</i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-header"><h4><i class="fa fa-users">&nbsp;&nbsp;USUÁRIOS</i></h4></li>
-                        <li><a class="fancybox" href="{{ route('viaturas.create') }}"><h4><i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></h4></a></li>
-                        <li><a href="#"><h4><i class="fa fa-search">&nbsp;&nbsp;Localisar</i></h4></a></li>
+                        <li class="dropdown-header"><h4><i class="fa fa-car">&nbsp;&nbsp;VIATURAS</i></h4></li>
+                        <li><a class="fancybox" href="{{ route('viaturas.create') }}"><h4>&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></h4></a></li>
+                        <li><a class="fancybox" href="{{ route('viaturas.index') }}"><h4>&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></h4></a></li>
                         <li><a href="#">Something else here</a></li>
                         <li class="divider"></li>
 
