@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/', 'HomeController@index');
-Route::get('home', function()
+Route::get('home', ['as' => 'home', function()
 {
     return redirect('/');
-});
+}]);

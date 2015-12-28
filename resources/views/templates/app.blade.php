@@ -21,8 +21,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
-                <i class="fa fa-home">&nbsp;&nbsp;HOME&nbsp;</i><span class="caret"></span>
+            <a class="navbar-brand" href="{{ route('home') }}">
+                <i class="fa fa-home">&nbsp;&nbsp;HOME&nbsp;</i>
             </a>
         </div>
         <div class="navbar-collapse collapse">
