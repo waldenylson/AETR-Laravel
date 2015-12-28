@@ -32,10 +32,9 @@
                        <i class="fa fa-keyboard-o">&nbsp;&nbsp;CADASTROS&nbsp;</i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-header"><h4><i class="fa fa-car">&nbsp;&nbsp;VIATURAS</i></h4></li>
-                        <li><a class="fancybox" href="{{ route('viaturas.create') }}"><h4>&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></h4></a></li>
-                        <li><a class="fancybox" href="{{ route('viaturas.index') }}"><h4>&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></h4></a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <li class="dropdown-header"><h5><i class="fa fa-car">&nbsp;&nbsp;VIATURAS</i></h5></li>
+                        <li><a class="fancybox" href="{{ route('viaturas.create') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
+                        <li><a class="fancybox" href="{{ route('viaturas.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
                         <li class="divider"></li>
 
                         <li><a href="#">Separated link</a></li>

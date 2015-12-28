@@ -4,7 +4,7 @@
         <i class="fa fa-car"></i>
         Viaturas Cadastradas
     </h2>
-    <hr/>
+    <hr />
     @if(count($viaturas) > 0)
         <table id="listaViaturas" class="table table-bordered table-hover table-striped" cellspacing="0">
             <thead>
@@ -12,7 +12,7 @@
                     <th>MARCA</th>
                     <th>MODELO</th>
                     <th>REGISTRO FAB</th>
-                    <th>DISPONÍVEL</th>
+                    <th>DISPONIBILIDADE</th>
                     <th>AÇÕES</th>
                 </tr>
             </thead>
