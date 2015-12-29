@@ -9,7 +9,7 @@
 
 	<style type="text/css">
 		.login {
-			background:transparent url("{!! asset('images/cadeado.jpg') !!}") repeat-x scroll 0 0;
+			background:transparent url("{!! asset('images/cadeado.jpg') !!}") no-repeat scroll 0 0;
 		}
 		body{margin-top: 30px;}
 	</style>

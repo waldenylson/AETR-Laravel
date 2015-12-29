@@ -5,7 +5,7 @@
 	@if($errors->any())
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
+				<div class="col-md-5 col-md-offset-3">
 					<div class="alert alert-danger">
 						<ul>
 							@foreach($errors->all() as $error)
@@ -20,7 +20,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
+			<div class="col-md-5 col-md-offset-3">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;<b>Acesso ao Sistema</b>
@@ -45,7 +45,7 @@
 									<i class="fa fa-btn fa-sign-in"></i>&nbsp;&nbsp;Entrar
 								</button>
 								<p class="help-block">
-									<i class="pull-right text-muted"><small>Este sistema usa o mesmo login do Hydra.</small></i>
+									<i class="pull-right text-muted"><small>Este sistema usa a mesma base de usuário/senha do Hydra.</small></i>
 								</p>
 							</div>
 						</div>

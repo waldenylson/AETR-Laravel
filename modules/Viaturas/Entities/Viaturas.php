@@ -2,7 +2,7 @@
    
 use Illuminate\Database\Eloquent\Model;
 
-class viaturas extends Model {
+class Viaturas extends Model {
 
     protected $guarded = ['_token'];
 

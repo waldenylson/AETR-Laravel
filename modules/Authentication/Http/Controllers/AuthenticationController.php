@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Pingpong\Modules\Routing\Controller;
+use Modules\Authentication\Entities\Sistema;
 
 class authenticationController extends Controller {
 
@@ -40,6 +41,10 @@ class authenticationController extends Controller {
 		{
 			return redirect()->back()->withInput()->withErrors($validator);
 		}
+
+		$dados = Sistema::paginate(10);
+
+		dd($dados);
 	}
 
 
