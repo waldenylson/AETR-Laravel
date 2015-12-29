@@ -8,5 +8,4 @@
         <small>Controle de Viaturas</small>
     </h1>
 </div>
-<iframe src="" id="contentLoad" name="contentLoad" frameborder="0"></iframe>
 @stop

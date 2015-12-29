@@ -77,7 +77,6 @@
 	<script src="{!! asset('bower_components/smartmenus/dist/jquery.smartmenus.js') !!}" type="text/javascript"></script>
 	<script src="{!! asset('bower_components/smartmenus/dist/addons/bootstrap/jquery.smartmenus.bootstrap.js') !!}" type="text/javascript"></script>
 
-	<script src="{!! asset('bower_components/bootbox/bootbox.js') !!}" type="text/javascript"></script>
 	<script src="{!! asset('bower_components/fancybox/source/jquery.fancybox.js?v=2.1.5') !!}" type="text/javascript"></script>
 	<script src="{!! asset('js/app.js') !!}" type="text/javascript"></script>
 </body>
