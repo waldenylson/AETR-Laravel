@@ -18,7 +18,7 @@ class CreateMotoristasTable extends Migration
             $table->string('usu_login', 30);
             $table->string('categoria_cnh', 2);
 
-            $table->foreign('usu_login')->references('usu_login')->on('sistema.usuario');
+            $table->foreign('usu_login')->references('usu_login')->on('sistema.usuario')->onDelete('cascade');
 
             $table->timestamps();
         });

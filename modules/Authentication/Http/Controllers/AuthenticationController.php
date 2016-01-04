@@ -1,11 +1,13 @@
 <?php namespace Modules\authentication\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Pingpong\Modules\Routing\Controller;
 use Modules\Authentication\Entities\Sistema;
+use Illuminate\Contracts\Auth\Guard;
 
-class authenticationController extends Controller {
+class AuthenticationController extends Controller {
 
 	private $rules = [
 		'username' => 'required',
@@ -17,6 +19,19 @@ class authenticationController extends Controller {
 		'password.required' => 'Campo Senha deve ser Preenchido!'
 	];
 
+
+	/**
+	 * @var Guard $auth
+	 */
+	private $auth;
+
+
+	public function __construct(Guard $auth)
+	{
+
+		$this->auth = $auth;
+	}
+
 	/**
 	 *  Show the form for user login
 	 *
@@ -25,7 +40,6 @@ class authenticationController extends Controller {
 	{
 		return redirect( route ('seguranca.login'));
 	}
-
 
 
 	public function getLogin()
@@ -44,7 +58,6 @@ class authenticationController extends Controller {
 
 		$dados = Sistema::paginate(10);
 
-		dd($dados);
 	}
 
 
