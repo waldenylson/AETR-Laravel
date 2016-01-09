@@ -1,65 +1,79 @@
-<?php
+<?php namespace App\Http\Controllers\Auth;
 
-namespace App\Http\Controllers\Auth;
-
-use App\User;
-use Validator;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Contracts\Auth\Guard;
+use App\User as User;
 
 class AuthController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Registration & Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users, as well as the
-    | authentication of existing users. By default, this controller uses
-    | a simple trait to add these behaviors. Why don't you explore it?
-    |
-    */
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    private $rules = [
+        'username' => 'required',
+        'password' => 'required'
+    ];
+
+    private $messages = [
+        'username.required' => 'Campo Usuário deve ser Preenchido!',
+        'password.required' => 'Campo Senha deve ser Preenchido!'
+    ];
+
 
     /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
+     * @var Guard $auth
      */
-    public function __construct()
+    private $auth;
+
+
+    public function __construct(Guard $auth)
     {
-        $this->middleware('guest', ['except' => 'getLogout']);
+
+        $this->auth = $auth;
     }
 
     /**
-     * Get a validator for an incoming registration request.
+     *  Show the form for user login
      *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    public function index()
     {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
-        ]);
+        return redirect(route('seguranca.login'));
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
-     */
-    protected function create(array $data)
+
+    public function getLogin()
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        return view('auth.login');
     }
+
+    public function postLogin(Request $request)
+    {
+        $validator = Validator::make($request->all(), $this->rules, $this->messages);
+
+        if($validator->fails())
+        {
+            return redirect()->back()->withInput()->withErrors($validator);
+        }
+
+        $usuario = User::where(['usu_login' => $request['username'], 'usu_senha' => $request['password']])->first();
+
+        if(is_null($usuario))
+        {
+            return redirect()->back()->withErrors(['message' =>'Usuário ou Senha inválidos!']);
+        }
+
+        Auth::login($usuario);
+
+        return redirect()->intended('/');
+    }
+
+
+    public function getLogout()
+    {
+        Auth::logout();
+    }
+
 }
