@@ -58,7 +58,7 @@ class AuthController extends Controller
             return redirect()->back()->withInput()->withErrors($validator);
         }
 
-        $usuario = User::where(['usu_login' => $request['username'], 'usu_senha' => $request['password']])->first();
+        $usuario = User::where(['usu_login' => $request['username'], 'usu_senha' => md5($request['password'])])->first();
 
         if(is_null($usuario))
         {
@@ -67,7 +67,9 @@ class AuthController extends Controller
 
         Auth::login($usuario);
 
-        return redirect()->intended('/');
+        return Auth::user();
+
+        //return redirect()->intended('/');
     }
 
 

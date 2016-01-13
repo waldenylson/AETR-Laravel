@@ -15,7 +15,7 @@ class CreateMotoristasExpedienteTable extends Migration
         Schema::create('motoristas_expediente', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('motorista_id');
+            $table->integer('motorista_id')->unsigned();
             $table->date('data');
 
             $table->foreign('motorista_id')->references('id')->on('motoristas');

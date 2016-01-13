@@ -12,7 +12,8 @@ class CreateNaturezasMissaoTable extends Migration
      */
     public function up()
     {
-        Schema::create('naturezas_missao', function (Blueprint $table) {
+        Schema::create('naturezas_missao', function (Blueprint $table)
+        {
             $table->increments('id');
 
             $table->string('titulo', 50);

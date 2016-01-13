@@ -12,10 +12,11 @@ class CreateMotoristasDiaTable extends Migration
      */
     public function up()
     {
-        Schema::create('motoristas_dia', function (Blueprint $table) {
+        Schema::create('motoristas_dia', function (Blueprint $table)
+        {
             $table->increments('id');
 
-            $table->integer('motorista_id');
+            $table->integer('motorista_id')->unsigned();
             $table->date('data');
 
             $table->foreign('motorista_id')->references('id')->on('motoristas');

@@ -1,5 +1,7 @@
 <?php
 
+
+
 Route::get('/', ['middleware' => 'auth', 'uses' => 'HomeController@index']);
 
 Route::get('home', ['as' => 'home', function()

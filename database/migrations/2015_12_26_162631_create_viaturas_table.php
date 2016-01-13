@@ -12,7 +12,8 @@ class CreateViaturasTable extends Migration
      */
     public function up()
     {
-        Schema::create('viaturas', function (Blueprint $table) {
+        Schema::create('viaturas', function (Blueprint $table)
+        {
             $table->increments('id');
 
             $table->string('marca',      50);

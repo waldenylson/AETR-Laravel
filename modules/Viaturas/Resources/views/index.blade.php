@@ -19,9 +19,9 @@
             <tbody>
             @foreach($viaturas as $viatura)
                 <tr>
-                    <td>{!! $viatura->marca       !!}</td>
-                    <td>{!! $viatura->modelo      !!}</td>
-                    <td>{!! $viatura->reg_fab     !!}</td>
+                    <td>{!! $viatura->marca                                          !!}</td>
+                    <td>{!! $viatura->modelo                                         !!}</td>
+                    <td>{!! $viatura->reg_fab                                        !!}</td>
                     <td>{!! $viatura->disponivel == 0 ? 'INDISPONÍVEL' : 'DIPONÍVEL' !!}</td>
 
                     <td width="1%" nowrap>
