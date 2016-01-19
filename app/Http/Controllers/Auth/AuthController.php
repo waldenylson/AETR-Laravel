@@ -2,11 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
-use Illuminate\Contracts\Auth\Guard;
 use App\User as User;
+use Illuminate\Contracts\Auth\Guard;
 
 class AuthController extends Controller
 {
@@ -23,14 +22,20 @@ class AuthController extends Controller
 
 
     /**
-     * @var Guard $auth
+     * The Guard implementation.
+     *
+     * @var Guard
      */
-    private $auth;
+    protected $auth;
 
-
+    /**
+     * Create a new filter instance.
+     *
+     * @param  Guard  $auth
+     * @return void
+     */
     public function __construct(Guard $auth)
     {
-
         $this->auth = $auth;
     }
 
@@ -65,11 +70,13 @@ class AuthController extends Controller
             return redirect()->back()->withErrors(['message' =>'Usuário ou Senha inválidos!']);
         }
 
-        Auth::login($usuario);
+        $this->auth->login($usuario);
 
-        return Auth::user();
+        //Auth::login($usuario);
 
-        //return redirect()->intended('/');
+        //return Auth::user();
+
+        return redirect()->intended('/');
     }
 
 

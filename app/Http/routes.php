@@ -2,8 +2,8 @@
 
 
 
-Route::get('/', 'HomeController@index');
-//Route::get('/', ['middleware' => 'auth', 'uses' => 'HomeController@index']);
+//Route::get('/', 'HomeController@index');
+Route::get('/', ['middleware' => 'auth', 'uses' => 'HomeController@index']);
 
 Route::get('home', ['as' => 'home', function()
 {
