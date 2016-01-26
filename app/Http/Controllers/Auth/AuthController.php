@@ -70,7 +70,7 @@ class AuthController extends Controller
             return redirect()->back()->withErrors(['message' =>'Usuário ou Senha inválidos!']);
         }
 
-        $this->auth->login($usuario);
+        $this->auth->login($usuario, true);
 
         //Auth::login($usuario);
 

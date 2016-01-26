@@ -82,7 +82,6 @@ class ViaturasController extends Controller
 
         if ($viatura->delete())
         {
-
             return redirect()->back()->with('message', 'Registro Removido com Sucesso!');
         }
         else
