@@ -38,7 +38,7 @@
 								<span class="input-group-addon">
 									<i class="fa fa-key"></i>
 								</span>
-								<input class="form-control" placeholder="Senha" name="password" type="password" value="">
+								<input class="form-control" placeholder="Senha" name="password" type="password" value="" id="password">
 							</div>
 							<div class="form-group">
 								<button type="submit" class="btn btn-primary btn-block">

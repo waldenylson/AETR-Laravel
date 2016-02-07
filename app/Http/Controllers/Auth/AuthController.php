@@ -1,15 +1,28 @@
 <?php namespace App\Http\Controllers\Auth;
 
+use Illuminate\Auth\Guard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
-use App\User as User;
-use Illuminate\Contracts\Auth\Guard;
 
 class AuthController extends Controller
 {
 
+    /**
+     * @var Guard $auth
+     */
+    private $auth;
+
+    /**
+     * AuthController constructor.
+     * @param Guard $auth
+     */
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+    }
+    
     private $rules = [
         'username' => 'required',
         'password' => 'required'
@@ -20,24 +33,6 @@ class AuthController extends Controller
         'password.required' => 'Campo Senha deve ser Preenchido!'
     ];
 
-
-    /**
-     * The Guard implementation.
-     *
-     * @var Guard
-     */
-    protected $auth;
-
-    /**
-     * Create a new filter instance.
-     *
-     * @param  Guard  $auth
-     * @return void
-     */
-    public function __construct(Guard $auth)
-    {
-        $this->auth = $auth;
-    }
 
     /**
      *  Show the form for user login
@@ -63,20 +58,28 @@ class AuthController extends Controller
             return redirect()->back()->withInput()->withErrors($validator);
         }
 
-        $usuario = User::where(['usu_login' => $request['username'], 'usu_senha' => md5($request['password'])])->first();
+
+        /*$usuario = \App\User::where(['usu_login' => $request['username'], 'usu_senha' => md5($request['password'])])->first();
 
         if(is_null($usuario))
         {
             return redirect()->back()->withErrors(['message' =>'Usuário ou Senha inválidos!']);
+        }*/
+
+        if ($this->auth->attempt(['usu_login' => $request['username'], 'usu_senha' => $request['password']])) {
+            // Authentication passed...
+            return redirect()->intended('/');
         }
 
-        $this->auth->login($usuario, true);
+        //$this->auth->login($usuario);
 
-        //Auth::login($usuario);
+        /*
+        if ($this->auth->attempt($request->only(['username', 'password']))) {
+            // Authentication passed...
+            return redirect()->intended('/');
+        } */
 
-        //return Auth::user();
 
-        return redirect()->intended('/');
     }
 
 
