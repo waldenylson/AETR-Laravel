@@ -15,11 +15,8 @@ class CreateDespachantesTable extends Migration
         Schema::create('despachantes', function (Blueprint $table)
         {
             $table->increments('id');
-
-            $table->string('usu_login', 30);
-
-            ///$table->foreign('usu_login')->references('usu_login')->on('sistema.usuario')->onDelete('cascade');
-
+            $table->string('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

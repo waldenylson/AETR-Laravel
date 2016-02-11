@@ -15,12 +15,10 @@ class CreateMotoristasTable extends Migration
         Schema::create('motoristas', function (Blueprint $table)
         {
             $table->increments('id');
-
             $table->string('usu_login', 30);
             $table->string('categoria_cnh', 2);
-
-            //$table->foreign('usu_login')->references('usu_login')->on('sistema.usuario')->onDelete('cascade');
-
+            $table->string('celular');
+            $table->string('agenda');
             $table->timestamps();
         });
     }

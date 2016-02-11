@@ -15,12 +15,9 @@ class CreateMotoristasDiaTable extends Migration
         Schema::create('motoristas_dia', function (Blueprint $table)
         {
             $table->increments('id');
-
             $table->integer('motorista_id')->unsigned();
             $table->date('data');
-
             $table->foreign('motorista_id')->references('id')->on('motoristas');
-
             $table->timestamps();
         });
     }

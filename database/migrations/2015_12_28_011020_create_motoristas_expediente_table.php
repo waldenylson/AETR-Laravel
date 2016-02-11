@@ -12,14 +12,12 @@ class CreateMotoristasExpedienteTable extends Migration
      */
     public function up()
     {
-        Schema::create('motoristas_expediente', function (Blueprint $table) {
+        Schema::create('motoristas_expediente', function (Blueprint $table)
+        {
             $table->increments('id');
-
             $table->integer('motorista_id')->unsigned();
             $table->date('data');
-
             $table->foreign('motorista_id')->references('id')->on('motoristas');
-
             $table->timestamps();
         });
     }
