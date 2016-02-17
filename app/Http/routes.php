@@ -33,7 +33,7 @@ Route::group(['prefix' => 'seguranca', 'namespace' => 'Auth'], function()
  *   destroy - Remove um Registro do Banco de Dados
  */
 
-Route::group(['prefix' => 'viaturas', 'namespace' => 'Viaturas'], function()
+Route::group(['prefix' => 'viaturas', 'namespace' => 'Viaturas', 'middleware' => 'auth'], function()
 {
     Route::get(''                , ['as' => 'viaturas.index'   , 'uses' => 'ViaturasController@index']);
     Route::get('cadastrar'       , ['as' => 'viaturas.create'  , 'uses' => 'ViaturasController@create']);

@@ -33,6 +33,17 @@ class AuthController extends Controller
         'password.required' => 'Campo Senha deve ser Preenchido!'
     ];
 
+    /**
+     *  Cria uma referencia na tabela users com base na
+     *  tabela de cadastro de usuários do Hydra.
+     *
+     *  @param $usu_login PK no cadastro do Hydra
+     */
+    public function createUserRelationship($usu_login)
+    {
+
+    }
+
 
     /**
      *  Show the form for user login
@@ -58,9 +69,11 @@ class AuthController extends Controller
             return redirect()->back()->withInput()->withErrors($validator);
         }
 
+        $usuario = \App\User::where(['usu_login' => $request['username'], 'usu_senha' => md5($request['password'])])->first();
 
-        /*$usuario = \App\User::where(['usu_login' => $request['username'], 'usu_senha' => md5($request['password'])])->first();
 
+
+        /*
         if(is_null($usuario))
         {
             return redirect()->back()->withErrors(['message' =>'Usuário ou Senha inválidos!']);
