@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class AuthController extends Controller
 {
@@ -69,7 +70,7 @@ class AuthController extends Controller
             return redirect()->back()->withInput()->withErrors($validator);
         }
 
-        $usuario = \App\User::where(['usu_login' => $request['username'], 'usu_senha' => md5($request['password'])])->first();
+        $usuario = User::where(['usu_login' => $request['username'], 'usu_senha' => md5($request['password'])])->first();
 
 
 
@@ -79,10 +80,10 @@ class AuthController extends Controller
             return redirect()->back()->withErrors(['message' =>'Usuário ou Senha inválidos!']);
         }*/
 
-        if ($this->auth->attempt(['usu_login' => $request['username'], 'usu_senha' => $request['password']])) {
+        //if ($this->auth->attempt(['usu_login' => $request['username'], 'usu_senha' => $request['password']])) {
             // Authentication passed...
             return redirect()->intended('/');
-        }
+        //}
 
         //$this->auth->login($usuario);
 
