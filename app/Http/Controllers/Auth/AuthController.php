@@ -36,12 +36,24 @@ class AuthController extends Controller
     ];
 
     /**
+     *  Mostra o Formulário para consulta/relacionamento
+     *  dos usuarios no Hydra e no banco local do sistema.
+     */
+    public function getCreateUserRelationship()
+    {
+        $viaturas = Viaturas::paginate(5);
+
+        return view('auth.CreateUserRelationship')->with(compact('viaturas'));
+    }
+
+
+    /**
      *  Cria uma referencia na tabela users com base na
      *  tabela de cadastro de usuários do Hydra.
      *
      *  @param $usu_login PK no cadastro do Hydra
      */
-    public function createUserRelationship($usu_login)
+    public function postCreateUserRelationship($usu_login)
     {
 
     }
@@ -71,31 +83,12 @@ class AuthController extends Controller
             return redirect()->back()->withInput()->withErrors($validator);
         }
 
-        //$usuario = User::where(['usu_login' => $request['username'], 'usu_senha' => md5($request['password'])])->first();
-
-
-
-        /*
-        if(is_null($usuario))
-        {
-            return redirect()->back()->withErrors(['message' =>'Usuário ou Senha inválidos!']);
-        }*/
-
-        //if ($this->auth->attempt(['usu_login' => $request['username'], 'usu_senha' => $request['password']])) {
         if ($this->auth->attempt(['usu_login' => $request['username'], 'password' => md5($request['password'])])) {
             // Authentication passed...
             return redirect()->intended('/');
+        } else {
+
         }
-
-        //$this->auth->login($usuario);
-
-        /*
-        if ($this->auth->attempt($request->only(['username', 'password']))) {
-            // Authentication passed...
-            return redirect()->intended('/');
-        } */
-
-
     }
 
 
