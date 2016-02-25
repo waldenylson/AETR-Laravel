@@ -59,7 +59,7 @@ class AuthController extends Controller
         try
         {
             User::create([
-                'usu_login' => $usuario[0]['usu_login'],
+                'usu_login' => strtolower($usuario[0]['usu_login']),
                 'password'  => bcrypt($usuario[0]['usu_senha'])
             ]);
 
