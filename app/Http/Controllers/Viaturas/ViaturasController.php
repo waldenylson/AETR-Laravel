@@ -15,8 +15,6 @@ class ViaturasController extends Controller
     {
         $viaturas = Viaturas::paginate(5);
 
-        //dd($viaturas);
-
         return view('viaturas.index')->with(compact('viaturas'));
     }
 

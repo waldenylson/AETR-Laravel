@@ -15,9 +15,6 @@ class UserSeeder extends Seeder
         $user = new User();
 
         $user->usu_login = 'waldenylsonwpss';
-        $user->usu_senha = md5('linux@@123');
-        $user->username = 'Waldenylson';
-        $user->email = 'waldenylsonwpss@cindacta3.intraer';
         $user->password = Hash::make(md5('linux@@123'));
 
         $user->save();

@@ -24,6 +24,8 @@
             <a class="navbar-brand" href="{{ route('home') }}">
                 <i class="fa fa-home">&nbsp;&nbsp;HOME&nbsp;</i>
             </a>
+
+
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -69,6 +71,7 @@
                 </li>
             </ul>
         </div><!--/.nav-collapse -->
+
     </div>
 @yield('content')
 	<script src="{!! asset('bower_components/jquery/dist/jquery.js') !!}" type="text/javascript"></script>

@@ -1,12 +1,12 @@
 <?php namespace App\Http\Controllers\Auth;
 
+use App\User;
 use Illuminate\Auth\Guard;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+use App\Models\UsersHydra;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
-use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -36,16 +36,15 @@ class AuthController extends Controller
     ];
 
     /**
-     *  Mostra o Formulário para consulta/relacionamento
-     *  dos usuarios no Hydra e no banco local do sistema.
+     *  Mostra o formulário de pesquisa para relacionar o
+     *  usuário na base do Hydra.
      */
     public function getCreateUserRelationship()
     {
-        $viaturas = Viaturas::paginate(5);
+        $usuarios = UsersHydra::where('omi_codigo', 'CINDACTA3')->orderBy('usu_nomeguerra', 'asc')->get();
 
-        return view('auth.CreateUserRelationship')->with(compact('viaturas'));
+        return view('auth.createRelationship')->with(compact('usuarios'));
     }
-
 
     /**
      *  Cria uma referencia na tabela users com base na
@@ -53,9 +52,23 @@ class AuthController extends Controller
      *
      *  @param $usu_login PK no cadastro do Hydra
      */
-    public function postCreateUserRelationship($usu_login)
+    public function postCreateUserRelationship($usu_login = null)
     {
+        $usuario = UsersHydra::where('usu_login', $usu_login)->get()->toArray();
 
+        try
+        {
+            User::create([
+                'usu_login' => $usuario[0]['usu_login'],
+                'password'  => bcrypt($usuario[0]['usu_senha'])
+            ]);
+
+            return redirect()->back()->with('message', 'Usuário Cadastrado com Sucesso!');
+
+        } catch(Exeption $e)
+        {
+            return redirect()->back()->withErrors('message', 'Erro ao Tentar Cadastrar o Usuário!\n $e');
+        }
     }
 
 
@@ -83,18 +96,24 @@ class AuthController extends Controller
             return redirect()->back()->withInput()->withErrors($validator);
         }
 
-        if ($this->auth->attempt(['usu_login' => $request['username'], 'password' => md5($request['password'])])) {
-            // Authentication passed...
-            return redirect()->intended('/');
-        } else {
+        $data = [
+            'usu_login' => strtolower($request['username']),
+            'password'  => md5($request['password'])
+        ];
 
+        if ($this->auth->attempt(['usu_login' => $data['usu_login'], 'password' => $data['password']]))
+        {
+            return redirect()->intended('/');
         }
+
+        return redirect()->back()->withErrors(['message' =>'Usuário ou Senha inválidos!']);
     }
 
 
     public function getLogout()
     {
-        Auth::logout();
-    }
+        $this->auth->logout();
 
+        return redirect('/');
+    }
 }

@@ -2,12 +2,11 @@
 
 
 
-//Route::get('/', 'HomeController@index');
-Route::get('/', ['middleware' => 'auth', 'uses' => 'HomeController@index']);
-
-Route::get('teste', function(){
-    return \Illuminate\Support\Facades\Auth::user();
+Route::get('/teste', function(){
+    return bcrypt(md5('linux@@123'));
 });
+
+Route::get('/', ['middleware' => 'auth', 'uses' => 'HomeController@index']);
 
 Route::get('home', ['as' => 'home', function()
 {
@@ -16,10 +15,13 @@ Route::get('home', ['as' => 'home', function()
 
 Route::group(['prefix' => 'seguranca', 'namespace' => 'Auth'], function()
 {
-    Route::get(''           , ['as' => 'seguranca.index'  , 'uses' => 'AuthController@index']);
-    Route::get('login'      , ['as' => 'seguranca.login'  , 'uses' => 'AuthController@getLogin']);
-    Route::get('logout'     , ['as' => 'seguranca.logout' , 'uses' => 'AuthController@getLogout']);
-    Route::post('login'     , ['as' => 'seguranca.login'  , 'uses' => 'AuthController@postLogin']);
+    Route::get('relacionar'        , ['as' => 'seguranca.relacionar'  , 'uses' => 'AuthController@getCreateUserRelationship']);
+    Route::get('{id}/criarRelacao' , ['as' => 'seguranca.makeRelacao' , 'uses' => 'AuthController@postCreateUserRelationship']);
+
+    Route::get(''       , ['as' => 'seguranca.index' , 'uses' => 'AuthController@index']);
+    Route::get('login'  , ['as' => 'seguranca.login' , 'uses' => 'AuthController@getLogin']);
+    Route::get('logout' , ['as' => 'seguranca.logout', 'uses' => 'AuthController@getLogout']);
+    Route::post('login' , ['as' => 'seguranca.login' , 'uses' => 'AuthController@postLogin']);
 });
 
 /**
