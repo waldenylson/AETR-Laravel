@@ -13,7 +13,7 @@ class ViaturasController extends Controller
      */
     public function index()
     {
-        $viaturas = Viaturas::paginate(5);
+        $viaturas = Viaturas::all();
 
         return view('viaturas.index')->with(compact('viaturas'));
     }
@@ -51,7 +51,7 @@ class ViaturasController extends Controller
     {
         $viatura = Viaturas::findOrFail($id);
 
-        return view('viaturas::edit')->with(compact('viatura'));
+        return view('viaturas.edit')->with(compact('viatura'));
     }
 
     /**

@@ -19,3 +19,16 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Models\Viaturas::class, function (Faker\Generator $faker) {
+    return [
+        'marca' => $faker->word,
+        'modelo' => $faker->word,
+        'reg_fab' => $faker->word,
+        'placa' => $faker->word,
+        'alocacao' => $faker->word,
+        'reservada' => $faker->word,
+
+        'disponivel' => $faker->boolean(),
+    ];
+});

@@ -22,7 +22,7 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Models\\": "app/models/",
+            "Models\\": "app/Models/",
             "AETR\\": "app/AETR/"
         }
     },
