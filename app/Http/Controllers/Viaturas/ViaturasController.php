@@ -78,13 +78,10 @@ class ViaturasController extends Controller
     {
         $viatura = Viaturas::findOrFail($id);
 
-        if ($viatura->delete())
-        {
+        if ($viatura->delete()) {
             return redirect()->back()->with('message', 'Registro Removido com Sucesso!');
         }
-        else
-        {
-            return redirect()->back()->with('message', 'Erro ao Tentar Remover o Registro!');
-        }
+
+        return redirect()->back()->with('message', 'Erro ao Tentar Remover o Registro!');
     }
 }

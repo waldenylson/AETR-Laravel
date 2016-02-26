@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\UsersHydra;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -69,6 +68,20 @@ class AuthController extends Controller
         {
             return redirect()->back()->withErrors('message', 'Erro ao Tentar Cadastrar o Usuário!\n $e');
         }
+    }
+
+    public function postDestroyUserRelationship($usu_login = null)
+    {
+        $user = User::where('usu_login', $usu_login)->first();
+
+        if (!is_null($user))
+        {
+            if ($user->delete()) {
+                return redirect()->back()->with('message', 'Registro Removido com Sucesso!');
+            }
+        }
+
+        return redirect()->back()->with('error', 'Erro ao Tentar Remover o Registro!');
     }
 
 

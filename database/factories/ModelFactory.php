@@ -32,3 +32,10 @@ $factory->define(App\Models\Viaturas::class, function (Faker\Generator $faker) {
         'disponivel' => $faker->boolean(),
     ];
 });
+
+$factory->define(App\Models\Naturezas::class, function (Faker\Generator $faker) {
+    return [
+        'titulo' => $faker->word,
+        'descricao' => $faker->text(),
+    ];
+});

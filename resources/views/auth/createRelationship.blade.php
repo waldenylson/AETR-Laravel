@@ -25,11 +25,11 @@
         <td>{!! $usuario->set_codigo      !!} </td>
 
         <td width="1%" nowrap>
-            <a href="{!! route('seguranca.makeRelacao', $usuario->usu_login) !!}" class="btn btn-primary btn-xs">
+            <a href="{!! route('seguranca.makeRelacao', strtolower($usuario->usu_login)) !!}" class="btn btn-primary btn-xs">
                 <i class="fa fa-fw fa-pencil"></i> Adicionar Usuário
             </a>
 
-            <a href="" class="btn btn-danger btn-xs btn-remover">
+            <a href="{!! route('seguranca.destroyRelacao', strtolower($usuario->usu_login)) !!}" class="btn btn-danger btn-xs btn-remover">
                 <i class="fa fa-fw fa-remove"></i> Remover Usuário
             </a>
         </td>
