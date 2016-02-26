@@ -6,9 +6,15 @@ use Illuminate\Http\Request;
 use App\Models\UsersHydra;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
+use App\AETR\Repositories\UsersHydraRepository;
 
 class AuthController extends Controller
 {
+
+    /**
+     * @var $usersHydraRepository Instancia da Classe UsersHydraRepository
+     */
+    protected $usersHydraRepository;
 
     /**
      * @var Guard $auth
@@ -18,10 +24,13 @@ class AuthController extends Controller
     /**
      * AuthController constructor.
      * @param Guard $auth
+     * @param UserHydraRepository $usersHydraRepository
      */
-    public function __construct(Guard $auth)
+    public function __construct(Guard $auth, UsersHydraRepository $usersHydraRepository)
     {
         $this->auth = $auth;
+
+        $this->usersHydraRepository = $usersHydraRepository;
     }
     
     private $rules = [
@@ -40,7 +49,7 @@ class AuthController extends Controller
      */
     public function getCreateUserRelationship()
     {
-        $usuarios = UsersHydra::where('omi_codigo', 'CINDACTA3')->orderBy('usu_nomeguerra', 'asc')->get();
+        $usuarios = $this->usersHydraRepository->getAllUsersFromHydra();
 
         return view('auth.createRelationship')->with(compact('usuarios'));
     }
