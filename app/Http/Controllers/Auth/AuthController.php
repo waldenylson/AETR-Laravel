@@ -62,7 +62,7 @@ class AuthController extends Controller
      */
     public function postCreateUserRelationship($usu_login = null)
     {
-        $usuario = UsersHydra::where('usu_login', $usu_login)->get()->toArray();
+        $usuario = $this->usersHydraRepository->getUserFromHydra($usu_login);
 
         try
         {

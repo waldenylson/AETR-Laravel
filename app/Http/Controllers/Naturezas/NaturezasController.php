@@ -1,14 +1,24 @@
 <?php namespace App\Http\Controllers\Naturezas;
 
+use App\AETR\Repositories\NaturezasRepository;
 use App\Http\Requests\StoreNaturezasPostRequest;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Naturezas;
 use Illuminate\Support\Facades\Validator;
 
 class NaturezasController extends Controller
 {
+
+    /**
+     * @var $naturezasRepository Instancia da Classe NaturezasRepository
+     */
+    protected $naturezasRepository;
+
+    public function __construct(NaturezasRepository $naturezasRepository)
+    {
+        $this->naturezasRepository = $naturezasRepository;
+    }
 
     /**
      * Display a listing of the resource.
@@ -17,7 +27,7 @@ class NaturezasController extends Controller
      */
     public function index()
     {
-        $naturezas = Naturezas::all();
+        $naturezas = $this->naturezasRepository->getAllNaturezas();
 
         return view('naturezas.index')->with(compact('naturezas'));
     }
@@ -47,7 +57,7 @@ class NaturezasController extends Controller
             return redirect()->back()->withInput()->withErrors($validator);
         }
 
-        $natureza = Naturezas::create($request->all());
+        $natureza = $this->naturezasRepository->storeNatureza($request);
 
         return redirect()->back()->with('message', 'Registro Inserido com Sucesso!');
     }
@@ -60,7 +70,7 @@ class NaturezasController extends Controller
      */
     public function edit($id)
     {
-        $natureza = Naturezas::findOrFail($id);
+        $natureza = $this->naturezasRepository->editNatureza($id);
 
         return view('naturezas.edit')->with(compact('natureza'));
     }
@@ -74,7 +84,7 @@ class NaturezasController extends Controller
      */
     public function update(StoreNaturezasPostRequest $request, $id)
     {
-        $naturezas = Naturezas::findOrFail($id)->update($request->all());
+        $natureza = $this->naturezasRepository->updateNatureza($request, $id);
 
         return redirect()->back()->with('message', 'Registro Atualizado com Sucesso!');
     }
@@ -87,9 +97,9 @@ class NaturezasController extends Controller
      */
     public function destroy($id)
     {
-        $natureza = Naturezas::findOrFail($id);
+        $result = $this->naturezasRepository->destroyNatureza($id);
 
-        if ($natureza->delete()) {
+        if ($result) {
             return redirect()->back()->with('message', 'Registro Removido com Sucesso!');
         }
 

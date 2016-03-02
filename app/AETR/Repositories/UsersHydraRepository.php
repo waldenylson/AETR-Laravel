@@ -12,6 +12,13 @@ class UsersHydraRepository
         return $usuarios;
     }
 
+    public function getUserFromHydra($usu_login)
+    {
+        $usuario = UsersHydra::where('usu_login', $usu_login)->get()->toArray();
+
+        return $usuario;
+    }
+
 
 
 
