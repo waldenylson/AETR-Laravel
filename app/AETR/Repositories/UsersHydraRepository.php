@@ -18,11 +18,4 @@ class UsersHydraRepository
 
         return $usuario;
     }
-
-
-
-
-
-
-
 }

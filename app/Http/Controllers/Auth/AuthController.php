@@ -59,6 +59,7 @@ class AuthController extends Controller
      *  tabela de cadastro de usuários do Hydra.
      *
      *  @param $usu_login PK no cadastro do Hydra
+     *  @return \Illuminate\Http\RedirectResponse
      */
     public function postCreateUserRelationship($usu_login = null)
     {
@@ -79,6 +80,14 @@ class AuthController extends Controller
         }
     }
 
+
+    /**
+     *  Remove Cria uma referencia na tabela users com base na
+     *  tabela de cadastro de usuários do Hydra.
+     *
+     *  @param null $usu_login PK no cadastro do Hydra
+     *  @return \Illuminate\Http\RedirectResponse
+     */
     public function postDestroyUserRelationship($usu_login = null)
     {
         $user = User::where('usu_login', $usu_login)->first();

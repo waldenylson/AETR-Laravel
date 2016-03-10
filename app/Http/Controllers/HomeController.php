@@ -17,6 +17,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.home');
+        $user = Auth::user()->toArray();
+
+        return view('home.home')->with(compact('user'));
     }
 }

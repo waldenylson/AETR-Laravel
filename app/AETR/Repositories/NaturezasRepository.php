@@ -1,9 +1,10 @@
 <?php namespace App\AETR\Repositories;
 
+use App\AETR\Repositories\Contracts\INaturezasRepository;
 use App\Http\Requests\StoreNaturezasPostRequest;
 use App\Models\Naturezas;
 
-class NaturezasRepository
+class NaturezasRepository implements INaturezasRepository
 {
     public function getAllNaturezas()
     {

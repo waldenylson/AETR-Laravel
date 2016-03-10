@@ -1,17 +1,20 @@
 <?php
 
-
-
-Route::get('/teste', function(){
-    return bcrypt(md5('linux@@123'));
-});
-
 Route::get('/', ['middleware' => 'auth', 'uses' => 'HomeController@index']);
 
 Route::get('home', ['as' => 'home', function()
 {
     return redirect('/');
 }]);
+
+
+Route::group(['prefix' => 'seguranca', 'namespace' => 'Auth'], function()
+{
+    Route::get('relacionar', ['as' => 'seguranca.relacionar', 'uses' => 'AuthController@getCreateUserRelationship']);
+    Route::get('{id}/criarRelacao', ['as' => 'seguranca.makeRelacao', 'uses' => 'AuthController@postCreateUserRelationship']);
+    Route::get('{id}/excluirRelacao', ['as' => 'seguranca.destroyRelacao', 'uses' => 'AuthController@postDestroyUserRelationship']);
+});
+
 
 Route::group(['prefix' => 'seguranca', 'namespace' => 'Auth'], function()
 {

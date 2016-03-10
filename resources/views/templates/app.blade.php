@@ -15,17 +15,9 @@
 <body class="container">
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand" href="{{ route('home') }}">
                 <i class="fa fa-home">&nbsp;&nbsp;HOME&nbsp;</i>
             </a>
-
-
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -70,8 +62,19 @@
                     </ul>
                 </li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="">
+                        <i class="fa fa-user"> {{ strtoupper($user['usu_login']) }}</i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('seguranca.logout') }}">
+                        <i class="fa fa-sign-out"> SAIR&nbsp;&nbsp;</i>
+                    </a>
+                </li>
+            </ul>
         </div><!--/.nav-collapse -->
-
     </div>
 @yield('content')
 	<script src="{!! asset('bower_components/jquery/dist/jquery.js') !!}" type="text/javascript"></script>

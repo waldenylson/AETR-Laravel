@@ -1,11 +1,22 @@
 <?php namespace App\Http\Controllers\Viaturas;
 
+use App\AETR\Repositories\Contracts\IViaturasRepository;
 use App\Http\Requests\StoreViaturasPostRequest;
-use App\Models\Viaturas as Viaturas;
 use App\Http\Controllers\Controller as Controller;
 
 class ViaturasController extends Controller
 {
+
+    /**
+     * @var $viaturasRepository Instancia da Classe ViaturasRepository
+     */
+    protected $viaturasRepository;
+
+    public function __construct(IViaturasRepository $viaturasRepository)
+    {
+        $this->viaturasRepository = $viaturasRepository;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +24,7 @@ class ViaturasController extends Controller
      */
     public function index()
     {
-        $viaturas = Viaturas::all();
+        $viaturas = $this->viaturasRepository->getAllViaturas();
 
         return view('viaturas.index')->with(compact('viaturas'));
     }
@@ -36,7 +47,7 @@ class ViaturasController extends Controller
      */
     public function store(StoreViaturasPostRequest $request)
     {
-        $viatura = Viaturas::create($request->all());
+        $viatura = $this->viaturasRepository->storeViatura($request);
 
         return redirect()->back()->with('message', 'Registro Inserido com Sucesso!');
     }
@@ -49,7 +60,7 @@ class ViaturasController extends Controller
      */
     public function edit($id)
     {
-        $viatura = Viaturas::findOrFail($id);
+        $viatura = $this->viaturasRepository->editViatura($id);
 
         return view('viaturas.edit')->with(compact('viatura'));
     }
@@ -63,7 +74,7 @@ class ViaturasController extends Controller
      */
     public function update(StoreViaturasPostRequest $request, $id)
     {
-        $viatura = Viaturas::findOrFail($id)->update($request->all());
+        $viatura = $this->viaturasRepository->updateViatura($request, $id);
 
         return redirect()->back()->with('message', 'Registro Atualizado com Sucesso!');
     }
@@ -76,12 +87,12 @@ class ViaturasController extends Controller
      */
     public function destroy($id)
     {
-        $viatura = Viaturas::findOrFail($id);
+        $result = $this->viaturasRepository->destroyViatura($id);
 
-        if ($viatura->delete()) {
+        if ($result) {
             return redirect()->back()->with('message', 'Registro Removido com Sucesso!');
         }
 
-        return redirect()->back()->with('message', 'Erro ao Tentar Remover o Registro!');
+        return redirect()->back()->with('error', 'Erro ao Tentar Remover o Registro!');
     }
 }
