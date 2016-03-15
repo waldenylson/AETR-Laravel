@@ -10,14 +10,6 @@ Route::get('home', ['as' => 'home', function()
 
 Route::group(['prefix' => 'seguranca', 'namespace' => 'Auth'], function()
 {
-    Route::get('relacionar', ['as' => 'seguranca.relacionar', 'uses' => 'AuthController@getCreateUserRelationship']);
-    Route::get('{id}/criarRelacao', ['as' => 'seguranca.makeRelacao', 'uses' => 'AuthController@postCreateUserRelationship']);
-    Route::get('{id}/excluirRelacao', ['as' => 'seguranca.destroyRelacao', 'uses' => 'AuthController@postDestroyUserRelationship']);
-});
-
-
-Route::group(['prefix' => 'seguranca', 'namespace' => 'Auth'], function()
-{
     Route::get('relacionar'          , ['as' => 'seguranca.relacionar'     , 'uses' => 'AuthController@getCreateUserRelationship']);
     Route::get('{id}/criarRelacao'   , ['as' => 'seguranca.makeRelacao'    , 'uses' => 'AuthController@postCreateUserRelationship']);
     Route::get('{id}/excluirRelacao' , ['as' => 'seguranca.destroyRelacao' , 'uses' => 'AuthController@postDestroyUserRelationship']);
@@ -39,7 +31,7 @@ Route::group(['prefix' => 'seguranca', 'namespace' => 'Auth'], function()
  *   destroy - Remove um Registro do Banco de Dados
  */
 
-Route::group(['prefix' => 'viaturas', 'namespace' => 'Viaturas', 'middleware' => 'auth'], function()
+Route::group(['prefix' => 'viaturas', 'middleware' => 'auth'], function()
 {
     Route::get(''                , ['as' => 'viaturas.index'   , 'uses' => 'ViaturasController@index']);
     Route::get('cadastrar'       , ['as' => 'viaturas.create'  , 'uses' => 'ViaturasController@create']);
@@ -61,7 +53,7 @@ Route::group(['prefix' => 'viaturas', 'namespace' => 'Viaturas', 'middleware' =>
  *   destroy - Remove um Registro do Banco de Dados
  */
 
-Route::group(['prefix' => 'naturezas', 'namespace' => 'Naturezas', 'middleware' => 'auth'], function()
+Route::group(['prefix' => 'naturezas', 'middleware' => 'auth'], function()
 {
     Route::get(''                , ['as' => 'naturezas.index'   , 'uses' => 'NaturezasController@index']);
     Route::get('cadastrar'       , ['as' => 'naturezas.create'  , 'uses' => 'NaturezasController@create']);

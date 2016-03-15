@@ -41,7 +41,9 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Action</a></li>
                                         <li><a href="#">Something else here</a></li>
-                                        <li class="disabled"><a class="disabled" href="#">Disabled item</a></li>
+                                        <li class="disabled">
+                                            <a class="disabled" href="#">Disabled item</a>
+                                        </li>
                                         <li><a href="#">One more link</a></li>
                                         <li><a href="#">Menu item 1</a></li>
                                         <li><a href="#">Menu item 2</a></li>

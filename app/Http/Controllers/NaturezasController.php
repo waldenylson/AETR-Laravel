@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers\Naturezas;
+<?php namespace App\Http\Controllers;
 
 use App\AETR\Repositories\NaturezasRepository;
 use App\Http\Requests\StoreNaturezasPostRequest;

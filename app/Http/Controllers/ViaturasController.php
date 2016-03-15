@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers\Viaturas;
+<?php namespace App\Http\Controllers;
 
 use App\AETR\Repositories\Contracts\IViaturasRepository;
 use App\Http\Requests\StoreViaturasPostRequest;
