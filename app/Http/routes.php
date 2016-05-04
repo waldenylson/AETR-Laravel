@@ -62,3 +62,14 @@ Route::group(['prefix' => 'naturezas', 'middleware' => 'auth'], function()
     Route::post('{id}/atualizar' , ['as' => 'naturezas.update'  , 'uses' => 'NaturezasController@update']);
     Route::get('{id}/remover'    , ['as' => 'naturezas.destroy' , 'uses' => 'NaturezasController@destroy']);
 });
+
+
+Route::group(['prefix' => 'requisicao', 'middleware' => 'auth'], function()
+{
+    Route::get(''                , ['as' => 'requisicoes.index'   , 'uses' => 'RequisicoesController@index']);
+    Route::get('cadastrar'       , ['as' => 'requisicoes.create'  , 'uses' => 'RequisicoesController@create']);
+    Route::post('salvar'         , ['as' => 'requisicoes.store'   , 'uses' => 'RequisicoesController@store']);
+    Route::get('{id}/editar'     , ['as' => 'requisicoes.edit'    , 'uses' => 'RequisicoesController@edit']);
+    Route::post('{id}/atualizar' , ['as' => 'requisicoes.update'  , 'uses' => 'RequisicoesController@update']);
+    Route::get('{id}/remover'    , ['as' => 'requisicoes.destroy' , 'uses' => 'RequisicoesController@destroy']);
+});

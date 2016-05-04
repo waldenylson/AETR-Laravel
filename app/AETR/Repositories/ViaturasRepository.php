@@ -14,6 +14,20 @@ class ViaturasRepository implements IViaturasRepository
         return $viaturas;
     }
 
+    public function getAllViaturasForSelect()
+    {
+        $baseArray = Viaturas::all();
+
+        $viaturas = array();
+
+        foreach($baseArray as $value)
+        {
+            $viaturas[$value->id] = $value->modelo;
+        }
+
+        return $viaturas;
+    }
+
     public function storeViatura(StoreViaturasPostRequest $request)
     {
         $viatura = Viaturas::create($request->all());
