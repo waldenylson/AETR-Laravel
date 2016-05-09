@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\AETR\Repositories\Contracts\INaturezasRepository;
 use Illuminate\Http\Request;
 use App\AETR\Repositories\Contracts\IViaturasRepository;
 
@@ -14,11 +15,12 @@ class RequisicoesController extends Controller
     /**
      * @var $viaturasRepository Instancia da Classe ViaturasRepository
      */
-    protected $viaturasRepository;
+    protected $viaturasRepository, $naturezasRepository;
 
-    public function __construct(IViaturasRepository $viaturasRepository)
+    public function __construct(IViaturasRepository $viaturasRepository, INaturezasRepository $naturezasRepository)
     {
-        $this->viaturasRepository = $viaturasRepository;
+        $this->viaturasRepository  = $viaturasRepository;
+        $this->naturezasRepository = $naturezasRepository;
     }
 
     /**
@@ -38,9 +40,10 @@ class RequisicoesController extends Controller
      */
     public function create()
     {
-        $viaturas = $this->viaturasRepository->getAllViaturasForSelect();
+        $viaturas  = $this->viaturasRepository->getAllViaturasForSelect();
+        $naturezas = $this->naturezasRepository->getAllNaturezasForSelect();
 
-        return view('requisicoes.create')->with(compact('viaturas'));
+        return view('requisicoes.create')->with(compact('viaturas'))->with(compact('naturezas'));
     }
 
     /**

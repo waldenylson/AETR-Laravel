@@ -13,6 +13,20 @@ class NaturezasRepository implements INaturezasRepository
         return $naturezas;
     }
 
+    public function getAllNaturezasForSelect()
+    {
+        $baseArray = Naturezas::all();
+
+        $naturezas = array();
+
+        foreach($baseArray as $value)
+        {
+            $naturezas[$value->id] = $value->titulo;
+        }
+
+        return $naturezas;
+    }
+
     public function storeNatureza(StoreNaturezasPostRequest $request)
     {
         $natureza = Naturezas::create($request->all());
