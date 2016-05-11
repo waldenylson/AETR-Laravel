@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="{!! asset('bower_components/sweetalert/dist/sweetalert.css') !!}">
 
 	<link rel="stylesheet" href="{!! asset('bower_components/datatables/media/css/dataTables.bootstrap.css') !!}">
+	<link rel="stylesheet" href="{!! asset('styles/app.css') !!}">
 
 	<style>body{margin-top: 10px;}</style>
 </head>

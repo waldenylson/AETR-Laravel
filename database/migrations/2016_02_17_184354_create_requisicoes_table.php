@@ -16,17 +16,14 @@ class CreateRequisicoesTable extends Migration
             $table->increments('id');
 
             $table->integer('viatura_id')->unsigned();
-            $table->integer('motorista_id')->unsigned();
+            $table->integer('equipe_servico_id')->unsigned();
             $table->integer('natureza_missao_id')->unsigned();
             $table->string('setor');
             $table->string('ramal');
-            $table->string('local_saida');
-            $table->string('apresentar_se_ao');
+            $table->string('apresentar_se');
             $table->date('data_inicio');
             $table->time('hora_inicio');
             $table->string('destino');
-            $table->date('data_prevista_termino');
-            $table->time('hora_prevista_termino');
             $table->text('observacoes');
             $table->string('om');
             $table->integer('odometro_saida');
@@ -36,7 +33,7 @@ class CreateRequisicoesTable extends Migration
             $table->boolean('finalizada');
 
             $table->foreign('viatura_id')->references('id')->on('viaturas');
-            $table->foreign('motorista_id')->references('id')->on('motoristas');
+            $table->foreign('equipe_servico_id')->references('id')->on('equipe_servico');
             $table->foreign('natureza_missao_id')->references('id')->on('naturezas_missao');
 
             $table->timestamps();
