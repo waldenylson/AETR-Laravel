@@ -6,7 +6,7 @@
     </h2>
     <hr />
     @if(count($viaturas) > 0)
-        <table id="listaViaturas" class="table table-bordered table-hover table-striped" cellspacing="0">
+        <table class="table table-bordered table-hover table-striped datatableimplements" cellspacing="0">
             <thead>
                 <tr>
                     <th>MARCA</th>

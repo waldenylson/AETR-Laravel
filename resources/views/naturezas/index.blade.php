@@ -6,7 +6,7 @@
     </h2>
     <hr />
     @if(count($naturezas) > 0)
-        <table id="listaNaturezas" class="table table-bordered table-hover table-striped" cellspacing="0">
+        <table class="table table-bordered table-hover table-striped datatableimplements" cellspacing="0">
             <thead>
             <tr>
                 <th>TÍTULO</th>

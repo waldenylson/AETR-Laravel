@@ -25,7 +25,6 @@ class CreateRequisicoesTable extends Migration
             $table->time('hora_inicio');
             $table->string('destino');
             $table->text('observacoes');
-            $table->string('om');
             $table->integer('odometro_saida');
             $table->integer('odometro_chegada');
             $table->date('data_chegada');

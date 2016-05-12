@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-    $('#listaViaturas').DataTable({
+    $('.datatableimplements').DataTable({
         "language": {
             "url": "../json/Portuguese-Brasil.json"
         }

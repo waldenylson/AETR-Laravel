@@ -23,6 +23,7 @@
     "smartmenus": "~0.9.7",
     "sweetalert": "~1.1.0",
     "bootswatch": "~3.3.6",
-    "datatables": "~1.10.10"
+    "datatables": "~1.10.10",
+    "ckeditor": "^4.5.8"
   }
 }

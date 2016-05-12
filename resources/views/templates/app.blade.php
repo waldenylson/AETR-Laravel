@@ -30,14 +30,17 @@
                         <li><a class="fancybox" href="{{ route('viaturas.create') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
                         <li><a class="fancybox" href="{{ route('viaturas.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
                         <li class="divider"></li>
+                        <li class="dropdown-header"><h5><i class="fa fa-tree">&nbsp;&nbsp;NATUREZAS</i></h5></li>
+                        <li><a class="fancybox" href="{{ route('naturezas.create') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
+                        <li><a class="fancybox" href="{{ route('naturezas.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
 
                         <li><a href="#">Separated link</a></li>
                         <li>
-                            <a href="#">One more separated link</a>
+                            <a href="#"><h5><i class="fa fa-car">&nbsp;&nbsp;TESTE</i></h5></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
-                                <li><a href="#">A long sub menu</span></a>
+                                <li><a href="#">A long sub menu</a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Action</a></li>
                                         <li><a href="#">Something else here</a></li>

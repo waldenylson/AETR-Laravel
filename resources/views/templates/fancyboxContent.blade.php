@@ -22,6 +22,8 @@
 	<script src="{!! asset('bower_components/datatables/media/js/jquery.dataTables.js') !!}" type="text/javascript"></script>
 	<script src="{!! asset('bower_components/datatables/media/js/dataTables.bootstrap.js') !!}" type="text/javascript"></script>
 
+	<script src="{!! asset('bower_components/ckeditor/ckeditor.js') !!}" type="text/javascript"></script>
+
 	<script src="{!! asset('js/app.js') !!}" type="text/javascript"></script>
 	<script src="{!! asset('js/datatables.js') !!}" type="text/javascript"></script>
 	@include('partials.alerts')
