@@ -26,17 +26,22 @@
                        <i class="fa fa-keyboard-o">&nbsp;&nbsp;CADASTROS&nbsp;</i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-header"><h5><i class="fa fa-car">&nbsp;&nbsp;VIATURAS</i></h5></li>
-                        <li><a class="fancybox" href="{{ route('viaturas.create') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
-                        <li><a class="fancybox" href="{{ route('viaturas.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
+                        <li class="dropdown-header"><a><h7><i class="fa fa-car">&nbsp;&nbsp;VIATURAS</i></h7></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="fancybox" href="{{ route('viaturas.create') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
+                            <li><a class="fancybox" href="{{ route('viaturas.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
+                        </ul>
+                        </li>
+
+
                         <li class="divider"></li>
                         <li class="dropdown-header"><h5><i class="fa fa-tree">&nbsp;&nbsp;NATUREZAS</i></h5></li>
                         <li><a class="fancybox" href="{{ route('naturezas.create') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
                         <li><a class="fancybox" href="{{ route('naturezas.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
 
-                        <li><a href="#">Separated link</a></li>
-                        <li>
-                            <a href="#"><h5><i class="fa fa-car">&nbsp;&nbsp;TESTE</i></h5></a>
+
+                        <li class="dropdown-header">
+                            <a href="#"><h7><i class="fa fa-car">&nbsp;&nbsp;TESTE</i></h7></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Action</a></li>
                                 <li><a href="#">Another action</a></li>
