@@ -44,7 +44,7 @@
                         <li><a href="javascript;"><h7><i class="fa fa-user">&nbsp;&nbsp;USUÁRIOS&nbsp;&nbsp;</i></h7></a>
                             <ul class="dropdown-menu">
                                 <li><a class="fancybox" href="{{ route('seguranca.relacionar') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
-                                <li><a class="fancybox" href="{{ route('seguranca.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
+                                <li><a class="fancybox" href="#">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -57,12 +57,12 @@
                         <li><a class="fancybox" href="{{ route('requisicoes.create') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Preencher</i></a></li>
                         <li><a class="fancybox" href="{{ route('requisicoes.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
                     </ul>
-                    <li><a href="javascript;"><h7><i class="fa fa-user">&nbsp;&nbsp;TESTE&nbsp;&nbsp;</i></h7></a>
+                    {{--<li><a href="javascript;"><h7><i class="fa fa-user">&nbsp;&nbsp;TESTE&nbsp;&nbsp;</i></h7></a>
                         <ul class="dropdown-menu">
-                            <li><a class="fancybox" href="{{ route('seguranca.relacionar') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
-                            <li><a class="fancybox" href="{{ route('seguranca.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
+                            <li><a class="fancybox" href="#">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
+                            <li><a class="fancybox" href="#">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
                         </ul>
-                    </li>
+                    </li>--}}
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
