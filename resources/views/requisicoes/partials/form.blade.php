@@ -26,12 +26,12 @@
             {!! Form::label('ramal', 'Ramal', ['class' => 'control-label']) !!}
             {!! Form::text('ramal', null, ['class' => 'form-control', 'id' => 'ramal']) !!}
         </div>
-    </div><br>
-    <div class="row">
         <div class="col-md-2">
             {!! Form::label('natureza_id', 'Natureza Missão', ['class' => 'control-label']) !!}
             {!! Form::select('natureza_id', $naturezas, null, ['class' => 'form-control', 'id' => 'natureza_id']) !!}
         </div>
+    </div><br>
+    <div class="row">
         <div class="col-md-2">
             {!! Form::label('viatura_id', 'Viatura', ['class' => 'control-label']) !!}
             {!! Form::select('viatura_id', $viaturas, null, ['class' => 'form-control', 'id' => 'viatura_id']) !!}
@@ -44,8 +44,6 @@
             {!! Form::label('apresentar_se', 'Apresentar-se', ['class' => 'control-label']) !!}
             {!! Form::text('apresentar_se', null, ['class' => 'form-control', 'id' => 'apresentar_se', 'placeholder' => 'Mais Antigo']) !!}
         </div>
-    </div><br>
-    <div class="row">
         <div class="col-md-2">
             {!! Form::label('data_inicio', 'Data Início', ['class' => 'control-label']) !!}
             {!! Form::date('data_inicio', null, ['class' => 'form-control', 'id' => 'data_inicio']) !!}
@@ -54,6 +52,8 @@
             {!! Form::label('hora_inicio', 'Hora Início', ['class' => 'control-label']) !!}
             {!! Form::time('hora_inicio', null, ['class' => 'form-control', 'id' => 'hora_inicio']) !!}
         </div>
+    </div><br>
+    <div class="row">
         <div class="col-md-2">
             {!! Form::label('data_chegada', 'Data Chegada', ['class' => 'control-label']) !!}
             {!! Form::date('data_chegada', null, ['class' => 'form-control', 'id' => 'data_chegada']) !!}
@@ -62,8 +62,6 @@
             {!! Form::label('hora_chegada', 'Hora Chegada', ['class' => 'control-label']) !!}
             {!! Form::time('hora_chegada', null, ['class' => 'form-control', 'id' => 'hora_chegada']) !!}
         </div>
-    </div><br>
-    <div class="row">
         <div class="col-md-2">
             {!! Form::label('odometro_saida', 'Odômetro Saída', ['class' => 'control-label']) !!}
             {!! Form::number('odometro_saida', null, ['class' => 'form-control', 'id' => 'odometro_saida']) !!}
@@ -72,19 +70,11 @@
             {!! Form::label('odometro_chegada', 'Odômetro Chegada', ['class' => 'control-label']) !!}
             {!! Form::number('odometro_chegada', null, ['class' => 'form-control', 'id' => 'odometro_chegada']) !!}
         </div>
-        <div class="col-md-2">
-            {!! Form::label('motorista', 'Motorista', ['class' => 'control-label']) !!}
-            {!! Form::text('motorista', null, ['class' => 'form-control', 'id' => 'motorista', 'disabled', 'placeholder' => 'Motorista']) !!}
-        </div>
-        <div class="col-md-2">
-            {!! Form::label('despachante', 'Despachante', ['class' => 'control-label']) !!}
-            {!! Form::text('despachante', null, ['class' => 'form-control', 'id' => 'despachante', 'disabled', 'placeholder' => 'despachante']) !!}
-        </div>
     </div><br>
     <div class="row">
         <div class="col-md-4">
             {!! Form::label('observacoes', 'Observações', ['class' => 'control-label']) !!}
-            {!! Form::textarea('observacoes', null, ['class' => 'form-control', 'id' => 'observacoes', 'rows' => '5']) !!}
+            {!! Form::textarea('observacoes', null, ['class' => 'form-control', 'id' => 'observacoes']) !!}
         </div>
     </div>
 </div>

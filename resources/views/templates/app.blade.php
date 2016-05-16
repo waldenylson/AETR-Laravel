@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="{!! asset('bower_components/font-awesome/css/font-awesome.css') !!}">
 	<link rel="stylesheet" media="screen" type="text/css" href="{!! asset('bower_components/fancybox/source/jquery.fancybox.css?v=2.1.5') !!}">
 
-    <style>body{margin-top: 70px;}</style>
+    <style>body{margin-top: 80px;}</style>
 </head>
 <body class="container">
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -26,50 +26,43 @@
                        <i class="fa fa-keyboard-o">&nbsp;&nbsp;CADASTROS&nbsp;</i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="dropdown-header"><a><h7><i class="fa fa-car">&nbsp;&nbsp;VIATURAS</i></h7></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="fancybox" href="{{ route('viaturas.create') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
-                            <li><a class="fancybox" href="{{ route('viaturas.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
-                        </ul>
+                        <li><a href="javascript;"><h7><i class="fa fa-car">&nbsp;&nbsp;VIATURAS</i></h7></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="fancybox" href="{{ route('viaturas.create') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
+                                <li><a class="fancybox" href="{{ route('viaturas.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript;"><h7><i class="fa fa-tree">&nbsp;&nbsp;NATUREZAS</i></h7></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="fancybox" href="{{ route('naturezas.create') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
+                                <li><a class="fancybox" href="{{ route('naturezas.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
+                            </ul>
                         </li>
 
-
                         <li class="divider"></li>
-                        <li class="dropdown-header"><h5><i class="fa fa-tree">&nbsp;&nbsp;NATUREZAS</i></h5></li>
-                        <li><a class="fancybox" href="{{ route('naturezas.create') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
-                        <li><a class="fancybox" href="{{ route('naturezas.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
 
-
-                        <li class="dropdown-header">
-                            <a href="#"><h7><i class="fa fa-car">&nbsp;&nbsp;TESTE</i></h7></a>
+                        <li><a href="javascript;"><h7><i class="fa fa-user">&nbsp;&nbsp;USUÁRIOS&nbsp;&nbsp;</i></h7></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">A long sub menu</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="disabled">
-                                            <a class="disabled" href="#">Disabled item</a>
-                                        </li>
-                                        <li><a href="#">One more link</a></li>
-                                        <li><a href="#">Menu item 1</a></li>
-                                        <li><a href="#">Menu item 2</a></li>
-                                        <li><a href="#">Menu item 3</a></li>
-                                        <li><a href="#">Menu item 4</a></li>
-                                        <li><a href="#">Menu item 5</a></li>
-                                        <li><a href="#">Menu item 6</a></li>
-                                        <li><a href="#">Menu item 7</a></li>
-                                        <li><a href="#">Menu item 8</a></li>
-                                        <li><a href="#">Menu item 9</a></li>
-                                        <li><a href="#">Menu item 10</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Another link</a></li>
-                                <li><a href="#">One more link</a></li>
+                                <li><a class="fancybox" href="{{ route('seguranca.relacionar') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
+                                <li><a class="fancybox" href="{{ route('seguranca.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
                             </ul>
                         </li>
                     </ul>
+                </li>
+                <li class="dropdown" role="menu">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button"  aria-haspopup="true" aria-expanded="true" href="javascript:;">
+                        <i class="fa fa-edit">&nbsp;&nbsp;REQUISIÇÕES&nbsp;</i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="fancybox" href="{{ route('requisicoes.create') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Preencher</i></a></li>
+                        <li><a class="fancybox" href="{{ route('requisicoes.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
+                    </ul>
+                    <li><a href="javascript;"><h7><i class="fa fa-user">&nbsp;&nbsp;TESTE&nbsp;&nbsp;</i></h7></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="fancybox" href="{{ route('seguranca.relacionar') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
+                            <li><a class="fancybox" href="{{ route('seguranca.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
+                        </ul>
+                    </li>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

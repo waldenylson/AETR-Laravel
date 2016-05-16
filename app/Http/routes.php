@@ -10,6 +10,7 @@ Route::get('home', ['as' => 'home', function()
 
 Route::group(['prefix' => 'seguranca', 'namespace' => 'Auth'], function()
 {
+    Route::get(''                    , ['as' => 'seguranca.relacoes'       , 'uses' => 'AuthController@showAllUserRelationship']);
     Route::get('relacionar'          , ['as' => 'seguranca.relacionar'     , 'uses' => 'AuthController@getCreateUserRelationship']);
     Route::get('{id}/criarRelacao'   , ['as' => 'seguranca.makeRelacao'    , 'uses' => 'AuthController@postCreateUserRelationship']);
     Route::get('{id}/excluirRelacao' , ['as' => 'seguranca.destroyRelacao' , 'uses' => 'AuthController@postDestroyUserRelationship']);
@@ -72,4 +73,14 @@ Route::group(['prefix' => 'requisicao', 'middleware' => 'auth'], function()
     Route::get('{id}/editar'     , ['as' => 'requisicoes.edit'    , 'uses' => 'RequisicoesController@edit']);
     Route::post('{id}/atualizar' , ['as' => 'requisicoes.update'  , 'uses' => 'RequisicoesController@update']);
     Route::get('{id}/remover'    , ['as' => 'requisicoes.destroy' , 'uses' => 'RequisicoesController@destroy']);
+});
+
+Route::group(['prefix' => 'equipeservico', 'middleware' => 'auth'], function()
+{
+    Route::get(''                , ['as' => 'equipe.index'   , 'uses' => 'EquipeServicoController@index']);
+    Route::get('cadastrar'       , ['as' => 'equipe.create'  , 'uses' => 'EquipeServicoController@create']);
+    Route::post('salvar'         , ['as' => 'equipe.store'   , 'uses' => 'EquipeServicoController@store']);
+    Route::get('{id}/editar'     , ['as' => 'equipe.edit'    , 'uses' => 'EquipeServicoController@edit']);
+    Route::post('{id}/atualizar' , ['as' => 'equipe.update'  , 'uses' => 'EquipeServicoController@update']);
+    Route::get('{id}/remover'    , ['as' => 'equipe.destroy' , 'uses' => 'EquipeServicoController@destroy']);
 });

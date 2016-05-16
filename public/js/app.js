@@ -7,7 +7,7 @@ $(document).ready(function()
             'autoDimensions'  : false,
             'modal'           : true,
             'type'            : 'iframe',
-            'autoSize'        : false,
+            'autoSize'        : true,
             'width'           : '90%',
             'showCloseButton' : true,
             afterShow         : function()
@@ -46,6 +46,6 @@ $(document).ready(function()
         parent.$.fancybox.close();
     });
 
-    CKEDITOR.config.height = 80;
+    CKEDITOR.config.height = 90;
     CKEDITOR.replaceAll();
 });
