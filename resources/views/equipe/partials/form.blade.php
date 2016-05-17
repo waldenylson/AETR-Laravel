@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-md-3">
             {!! Form::label('despachante', 'Despachante', ['class' => 'control-label']) !!}
-            {!! Form::text('despachante', null, ['class' => 'form-control', 'id' => 'despachante', 'disabled']) !!}
+            {!! Form::text('despachante', null, ['class' => 'form-control', 'id' => 'despachante']) !!}
         </div>
         <div class="col-md-3">
             {!! Form::label('motorista1', 'Motorista I', ['class' => 'control-label']) !!}

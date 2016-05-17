@@ -1,10 +1,8 @@
-<?php
+<?php namespace App\Http\Requests;
 
-namespace App\Http\Requests;
+use Illuminate\Foundation\Http\FormRequest;
 
-use App\Http\Requests\Request;
-
-class StoreNaturezasPostRequest extends Request
+class StoreNaturezasPostRequest extends FormRequest
 {
 
     /**

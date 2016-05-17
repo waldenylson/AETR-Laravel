@@ -16,7 +16,8 @@ class CreateEquipeServicoTable extends Migration
             $table->increments('id');
 
             $table->string('despachante');
-            $table->string('motoristas');
+            $table->string('motorista1');
+            $table->string('motorista2');
             $table->date('data');
 
             $table->timestamps();
