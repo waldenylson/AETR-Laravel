@@ -46,7 +46,7 @@
         </div>
         <div class="col-md-2">
             {!! Form::label('data_inicio', 'Data Início', ['class' => 'control-label']) !!}
-            {!! Form::date('data_inicio', null, ['class' => 'form-control', 'id' => 'data_inicio']) !!}
+            {!! Form::date('data_inicio', \Carbon\Carbon::now(), ['class' => 'form-control', 'id' => 'data_inicio']) !!}
         </div>
         <div class="col-md-2">
             {!! Form::label('hora_inicio', 'Hora Início', ['class' => 'control-label']) !!}
