@@ -25,20 +25,20 @@ class StoreEquipeServicoPostRequest extends Request
             'despachante' => 'required|min:5',
             'motorista1'  => 'required|min:5',
             'motorista2'  => 'required|min:5',
-            'motorista2'  => 'required|min:5',
-            'data'        => 'required|min:5',
+            'data'        => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'despachante.required'     	=> 'Campo Nome é Obrigatório!',
-            'despachante.min'          	=> 'O campo Nome deve ter pelo menos :min caracteres!',
+            'despachante.required'     	=> 'Nome do despachante é Obrigatório!',
+            'despachante.min'          	=> 'O campo despachante deve ter pelo menos :min caracteres!',
             'motorista1.required'     	=> 'Campo Motorista I é Obrigatório!',
             'motorista1.min'          	=> 'O campo Motorista I deve ter pelo menos :min caracteres!',
             'motorista2.required'     	=> 'Campo Motorista II é Obrigatório!',
             'motorista2.min'          	=> 'O campo Motorista II deve ter pelo menos :min caracteres!',
+            'data.required'             => 'O campo Data é obrigatório',
         ];
     }
 }
