@@ -1,8 +1,8 @@
-<?php namespace App\AETR\Repositories\Contracts;
+<?php namespace App\AETR\Contracts;
 
 use App\Http\Requests\StoreNaturezasPostRequest;
 
-interface INaturezasRepository
+interface NaturezasRepository
 {
     public function getAllNaturezas();
     public function storeNatureza(StoreNaturezasPostRequest $request);

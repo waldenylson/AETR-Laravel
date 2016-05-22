@@ -1,22 +1,17 @@
-<?php
-
-namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreEquipeServicoPostRequest;
-use App\AETR\Repositories\EquipeServicoRepository;
-
-use App\Http\Requests;
+use App\AETR\Contracts\EquipeServicoRepository as EquipeServicoRepositoryContract;
 use App\Http\Controllers\Controller;
 
 class EquipeServicoController extends Controller
 {
-
     /**
      * @var $equipeRepository Instancia da Classe EquipeServicoRepository
      */
     protected $equipeRepository;
 
-    public function __construct(EquipeServicoRepository $equipeRepository)
+    public function __construct(EquipeServicoRepositoryContract $equipeRepository)
     {
         $this->equipeRepository = $equipeRepository;
     }
@@ -30,6 +25,8 @@ class EquipeServicoController extends Controller
     public function index()
     {
         $equipes = $this->equipeRepository->getAllRecords();
+
+        //dd($equipes);
 
         return view('equipe.index')->with(compact('equipes'));
     }
@@ -52,13 +49,6 @@ class EquipeServicoController extends Controller
      */
     public function store(StoreEquipeServicoPostRequest $request)
     {
-        $validator = Validator::make($request->all(), $this->rules, $this->messages);
-
-        if($validator->fails())
-        {
-            return redirect()->back()->withInput()->withErrors($validator);
-        }
-
         $equipe = $this->equipeRepository->storeEquipeServico($request);
 
         return redirect()->back()->with('message', 'Registro Inserido com Sucesso!');

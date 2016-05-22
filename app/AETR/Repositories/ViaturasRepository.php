@@ -1,11 +1,11 @@
 <?php namespace App\AETR\Repositories;
 
-use App\AETR\Repositories\Contracts\IViaturasRepository;
+use App\AETR\Contracts\Repositories\ViaturasRepository as ViaturasRepositoryContract;
 use App\Http\Requests\StoreViaturasPostRequest;
 use App\Models\Viaturas;
 
 
-class ViaturasRepository implements IViaturasRepository
+class ViaturasRepository implements ViaturasRepositoryContract
 {
     public function getAllViaturas()
     {

@@ -23,14 +23,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(
-          'App\AETR\Repositories\Contracts\IViaturasRepository',
-          'App\AETR\Repositories\ViaturasRepository'
-        );
+        $this->registerRepositories();
+    }
 
-        $this->app->bind(
-            'App\AETR\Repositories\Contracts\INaturezasRepository',
-            'App\AETR\Repositories\NaturezasRepository'
-        );
+    public function registerRepositories()
+    {
+        $repos = [
+            \App\AETR\Contracts\ViaturasRepository::class      =>  \App\AETR\Repositories\ViaturasRepository::class,
+            \App\AETR\Contracts\NaturezasRepository::class     =>  \App\AETR\Repositories\NaturezasRepository::class,
+            \App\AETR\Contracts\EquipeServicoRepository::class =>  \App\AETR\Repositories\EquipeServicoRepository::class,
+        ];
+
+        foreach ($repos as $contract => $repo)
+        {
+            $this->app->singleton($contract, $repo);
+        }
     }
 }

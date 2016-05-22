@@ -1,11 +1,9 @@
 <?php namespace App\Http\Controllers;
 
-use App\AETR\Repositories\NaturezasRepository;
+use App\AETR\Contracts\NaturezasRepository as NaturezasRepositoryContract;
 use App\Http\Requests\StoreNaturezasPostRequest;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
+
 
 class NaturezasController extends Controller
 {
@@ -15,7 +13,7 @@ class NaturezasController extends Controller
      */
     protected $naturezasRepository;
 
-    public function __construct(NaturezasRepository $naturezasRepository)
+    public function __construct(NaturezasRepositoryContract $naturezasRepository)
     {
         $this->naturezasRepository = $naturezasRepository;
     }
@@ -50,13 +48,6 @@ class NaturezasController extends Controller
      */
     public function store(StoreNaturezasPostRequest $request)
     {
-        $validator = Validator::make($request->all(), $this->rules, $this->messages);
-
-        if($validator->fails())
-        {
-            return redirect()->back()->withInput()->withErrors($validator);
-        }
-
         $natureza = $this->naturezasRepository->storeNatureza($request);
 
         return redirect()->back()->with('message', 'Registro Inserido com Sucesso!');

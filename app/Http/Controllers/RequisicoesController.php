@@ -1,10 +1,7 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-namespace App\Http\Controllers;
-
-use App\AETR\Repositories\Contracts\INaturezasRepository;
-use Illuminate\Http\Request;
-use App\AETR\Repositories\Contracts\IViaturasRepository;
+use App\AETR\Contracts\NaturezasRepository as NaturezasRepositoryContract;
+use App\AETR\Contracts\ViaturasRepository as ViaturasRepositoryContract;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -17,7 +14,7 @@ class RequisicoesController extends Controller
      */
     protected $viaturasRepository, $naturezasRepository;
 
-    public function __construct(IViaturasRepository $viaturasRepository, INaturezasRepository $naturezasRepository)
+    public function __construct(ViaturasRepositoryContract $viaturasRepository, NaturezasRepositoryContract $naturezasRepository)
     {
         $this->viaturasRepository  = $viaturasRepository;
         $this->naturezasRepository = $naturezasRepository;

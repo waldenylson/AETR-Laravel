@@ -1,12 +1,12 @@
 <?php namespace App\AETR\Repositories;
 
 
-use App\AETR\Repositories\Contracts\IEquipeServicoRepository;
+use App\AETR\Contracts\EquipeServicoRepository as EquipeServicoRepositoryContract;
 use App\Http\Requests\StoreEquipeServicoPostRequest;
 use App\Models\EquipeServico;
 
 
-class EquipeServicoRepository implements IEquipeServicoRepository
+class EquipeServicoRepository implements EquipeServicoRepositoryContract
 {
 
     public function getAllRecords()

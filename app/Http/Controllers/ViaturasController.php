@@ -1,8 +1,8 @@
 <?php namespace App\Http\Controllers;
 
-use App\AETR\Repositories\Contracts\IViaturasRepository;
+use App\AETR\Contracts\ViaturasRepository as ViaturasRepositoryContract;
 use App\Http\Requests\StoreViaturasPostRequest;
-use App\Http\Controllers\Controller as Controller;
+use App\Http\Controllers\Controller;
 
 class ViaturasController extends Controller
 {
@@ -12,7 +12,7 @@ class ViaturasController extends Controller
      */
     protected $viaturasRepository;
 
-    public function __construct(IViaturasRepository $viaturasRepository)
+    public function __construct(ViaturasRepositoryContract $viaturasRepository)
     {
         $this->viaturasRepository = $viaturasRepository;
     }

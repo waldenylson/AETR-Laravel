@@ -1,8 +1,8 @@
-<?php namespace App\AETR\Repositories\Contracts;
+<?php namespace App\AETR\Contracts;
 
 use App\Http\Requests\StoreEquipeServicoPostRequest;
 
-interface IEquipeServicoRepository
+interface EquipeServicoRepository
 {
     public function getAllRecords();
     public function storeEquipeServico(StoreEquipeServicoPostRequest $request);

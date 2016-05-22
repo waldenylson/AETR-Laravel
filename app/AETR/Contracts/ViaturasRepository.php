@@ -1,8 +1,8 @@
-<?php namespace App\AETR\Repositories\Contracts;
+<?php namespace App\AETR\Contracts;
 
 use App\Http\Requests\StoreViaturasPostRequest;
 
-interface IViaturasRepository
+interface ViaturasRepository
 {
     public function getAllViaturas();
 
