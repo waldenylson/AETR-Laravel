@@ -1,6 +1,6 @@
 <?php namespace App\AETR\Repositories;
 
-use App\AETR\Contracts\Repositories\ViaturasRepository as ViaturasRepositoryContract;
+use App\AETR\Contracts\ViaturasRepository as ViaturasRepositoryContract;
 use App\Http\Requests\StoreViaturasPostRequest;
 use App\Models\Viaturas;
 

@@ -38,6 +38,12 @@
                                 <li><a class="fancybox" href="{{ route('naturezas.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
                             </ul>
                         </li>
+                        <li><a href="javascript;"><h7><i class="fa fa-users">&nbsp;&nbsp;EQUIPES</i></h7></a>
+                            <ul class="dropdown-menu">
+                                <li><a class="fancybox" href="{{ route('equipe.create') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
+                                <li><a class="fancybox" href="{{ route('equipe.index') }}">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
+                            </ul>
+                        </li>
 
                         <li class="divider"></li>
 

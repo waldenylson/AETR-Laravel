@@ -2,7 +2,7 @@
 @section('content')
     <h2>
         <i class="fa fa-users"></i>
-        Naturezas de Missão Cadastradas
+        Equipes de Serviço Cadastradas
     </h2>
     <hr />
     @if(count($equipes) > 0)

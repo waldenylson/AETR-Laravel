@@ -26,8 +26,6 @@ class EquipeServicoController extends Controller
     {
         $equipes = $this->equipeRepository->getAllRecords();
 
-        //dd($equipes);
-
         return view('equipe.index')->with(compact('equipes'));
     }
 
