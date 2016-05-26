@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="{!! asset('bower_components/sweetalert/dist/sweetalert.css') !!}">
 
 	<link rel="stylesheet" href="{!! asset('bower_components/datatables/media/css/dataTables.bootstrap.css') !!}">
+	<link rel="stylesheet" href="{!! asset('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.css') !!}">
 	<link rel="stylesheet" href="{!! asset('styles/app.css') !!}">
 
 	<style>body{margin-top: 10px;}</style>
@@ -21,6 +22,8 @@
 
 	<script src="{!! asset('bower_components/datatables/media/js/jquery.dataTables.js') !!}" type="text/javascript"></script>
 	<script src="{!! asset('bower_components/datatables/media/js/dataTables.bootstrap.js') !!}" type="text/javascript"></script>
+	<script src="{!! asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js') !!}" type="text/javascript"></script>
+	<script src="{!! asset('bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.pt-BR.min.js') !!}" type="text/javascript"></script>
 
 	<script src="{!! asset('bower_components/ckeditor/ckeditor.js') !!}" type="text/javascript"></script>
 

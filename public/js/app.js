@@ -1,20 +1,29 @@
 $(document).ready(function()
 {
     $('.fancybox').fancybox(
+    {
+        'overlayShow'     : true,
+        'autoScale'       : true,
+        'autoDimensions'  : false,
+        'modal'           : true,
+        'type'            : 'iframe',
+        'autoSize'        : true,
+        'width'           : '90%',
+        'showCloseButton' : true,
+        afterShow         : function()
         {
-            'overlayShow'     : true,
-            'autoScale'       : true,
-            'autoDimensions'  : false,
-            'modal'           : true,
-            'type'            : 'iframe',
-            'autoSize'        : true,
-            'width'           : '90%',
-            'showCloseButton' : true,
-            afterShow         : function()
-            {
-                $('.fancybox-skin').append('<a title="Fechar" class="fancybox-item fancybox-close" id="teste" onclick="$.fancybox.close();"></a>');
-            }
-        });
+            $('.fancybox-skin').append('<a title="Fechar" class="fancybox-item fancybox-close" id="teste" onclick="$.fancybox.close();"></a>');
+        }
+    });
+
+    $('#sandbox-container input').datepicker({
+        format: "dd/mm/yyyy",
+        todayBtn: "linked",
+        clearBtn: true,
+        language: "pt-BR",
+        orientation: "auto right",
+        todayHighlight: true
+    });
 
     $("a.btn-remover").click(function(e)
     {

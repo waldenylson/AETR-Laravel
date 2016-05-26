@@ -54,9 +54,9 @@
         </div>
     </div><br>
     <div class="row">
-        <div class="col-md-2">
-            {!! Form::label('data_chegada', 'Data Chegada', ['class' => 'control-label']) !!}
-            {!! Form::date('data_chegada', null, ['class' => 'form-control', 'id' => 'data_chegada']) !!}
+        <div class="col-md-2" id="sandbox-container">
+            {!! Form::label('data_chegada', 'Data Chegada', ['class' => 'control-label date']) !!}
+            {!! Form::text('data_chegada', null, ['class' => 'form-control input-date', 'id' => 'data_chegada']) !!}
         </div>
         <div class="col-md-2">
             {!! Form::label('hora_chegada', 'Hora Chegada', ['class' => 'control-label']) !!}
