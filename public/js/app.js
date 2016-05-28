@@ -16,13 +16,9 @@ $(document).ready(function()
         }
     });
 
-    $('#sandbox-container input').datepicker({
-        format: "dd/mm/yyyy",
-        todayBtn: "linked",
-        clearBtn: true,
-        language: "pt-BR",
-        orientation: "auto right",
-        todayHighlight: true
+
+    $('.datepicker').datetimepicker({
+        'format': 'L'
     });
 
     $("a.btn-remover").click(function(e)

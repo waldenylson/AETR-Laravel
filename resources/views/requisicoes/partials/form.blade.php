@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-md-2">
             {!! Form::label('id', 'Número', ['class' => 'control-label']) !!}
-            {!! Form::text('id', null, ['class' => 'form-control', 'id' => 'id', 'disabled', 'placeholder' => 'Automático']) !!}
+            {!! Form::text('id', null, ['class' => 'form-control', 'id' => 'id', 'disabled', 'readonly', 'placeholder' => 'Automático']) !!}
         </div>
         <div class="col-md-2">
             {!! Form::label('requisitante', 'Requisitante', ['class' => 'control-label']) !!}
@@ -45,8 +45,15 @@
             {!! Form::text('apresentar_se', null, ['class' => 'form-control', 'id' => 'apresentar_se', 'placeholder' => 'Mais Antigo']) !!}
         </div>
         <div class="col-md-2">
-            {!! Form::label('data_inicio', 'Data Início', ['class' => 'control-label']) !!}
-            {!! Form::date('data_inicio', \Carbon\Carbon::now(), ['class' => 'form-control', 'id' => 'data_inicio']) !!}
+            <div class="form-group">
+                {!! Form::label('data_inicio', 'Data Início', ['class' => 'control-label']) !!}
+                <div class="input-group date datepicker">
+                    {!! Form::text('data_inicio', null, ['class' => 'form-control datepicker', 'id' => 'data_inicio']) !!}
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
         </div>
         <div class="col-md-2">
             {!! Form::label('hora_inicio', 'Hora Início', ['class' => 'control-label']) !!}
@@ -54,9 +61,16 @@
         </div>
     </div><br>
     <div class="row">
-        <div class="col-md-2" id="sandbox-container">
-            {!! Form::label('data_chegada', 'Data Chegada', ['class' => 'control-label date']) !!}
-            {!! Form::text('data_chegada', null, ['class' => 'form-control input-date', 'id' => 'data_chegada']) !!}
+        <div class="col-md-2">
+            <div class="form-group">
+                {!! Form::label('data_chegada', 'Data Início', ['class' => 'control-label']) !!}
+                <div class="input-group date datepicker">
+                    {!! Form::text('data_chegada', null, ['class' => 'form-control datepicker', 'id' => 'data_chegada']) !!}
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
         </div>
         <div class="col-md-2">
             {!! Form::label('hora_chegada', 'Hora Chegada', ['class' => 'control-label']) !!}

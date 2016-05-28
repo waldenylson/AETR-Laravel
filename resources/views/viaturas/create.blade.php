@@ -4,6 +4,7 @@
     <i class="fa fa-car"></i>
     Cadastrar Viatura
 </h2>
+<hr />
     {!! Form::open(['route' => 'viaturas.store']) !!}
         @include('viaturas.partials.form')
         <button class="btn btn-primary" type="submit">

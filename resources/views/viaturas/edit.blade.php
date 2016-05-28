@@ -4,6 +4,7 @@
         <i class="fa fa-car"></i>
         Cadastrar Viatura
     </h2>
+    <hr />
     {!! Form::model($viatura, ['route' => ['viaturas.update', $viatura->id]]) !!}
     @include('viaturas.partials.form')
     <button class="btn btn-primary" type="submit">

@@ -4,6 +4,7 @@
         <i class="fa fa-edit"></i>
         Preencher Requisição Viatura
     </h2>
+    <hr />
     {!! Form::open(['route' => 'requisicoes.store']) !!}
     @include('requisicoes.partials.form')
     <button class="btn btn-primary" type="submit">
