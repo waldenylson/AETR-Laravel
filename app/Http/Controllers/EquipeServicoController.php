@@ -3,6 +3,7 @@
 use App\Http\Requests\StoreEquipeServicoPostRequest;
 use App\AETR\Contracts\EquipeServicoRepository as EquipeServicoRepositoryContract;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class EquipeServicoController extends Controller
 {
@@ -47,6 +48,10 @@ class EquipeServicoController extends Controller
      */
     public function store(StoreEquipeServicoPostRequest $request)
     {
+        dd(Carbon::toDateString($request['data']));
+
+        //$request['data'] = Carbon::parse()
+
         $equipe = $this->equipeRepository->storeEquipeServico($request);
 
         return redirect()->back()->with('message', 'Registro Inserido com Sucesso!');

@@ -56,8 +56,15 @@
             </div>
         </div>
         <div class="col-md-2">
-            {!! Form::label('hora_inicio', 'Hora Início', ['class' => 'control-label']) !!}
-            {!! Form::time('hora_inicio', null, ['class' => 'form-control', 'id' => 'hora_inicio']) !!}
+            <div class="form-group">
+                {!! Form::label('hora_inicio', 'Hora Início', ['class' => 'control-label']) !!}
+                <div class="input-group date timepicker">
+                    {!! Form::text('hora_inicio', null, ['class' => 'form-control timepicker', 'id' => 'hora_inicio']) !!}
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+            </div>
         </div>
     </div><br>
     <div class="row">
@@ -73,8 +80,15 @@
             </div>
         </div>
         <div class="col-md-2">
-            {!! Form::label('hora_chegada', 'Hora Chegada', ['class' => 'control-label']) !!}
-            {!! Form::time('hora_chegada', null, ['class' => 'form-control', 'id' => 'hora_chegada']) !!}
+            <div class="form-group">
+                {!! Form::label('hora_chegada', 'Hora Chegada', ['class' => 'control-label']) !!}
+                <div class="input-group date timepicker">
+                    {!! Form::text('hora_chegada', null, ['class' => 'form-control timepicker', 'id' => 'hora_chegada']) !!}
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                </div>
+            </div>
         </div>
         <div class="col-md-2">
             {!! Form::label('odometro_saida', 'Odômetro Saída', ['class' => 'control-label']) !!}

@@ -23,7 +23,8 @@
         "psr-4": {
             "App\\": "app/",
             "Models\\": "app/Models/",
-            "AETR\\": "app/AETR/"
+            "AETR\\": "app/AETR/",
+            "Suport\\": "app/Suport/"
         }
     },
     "autoload-dev": {

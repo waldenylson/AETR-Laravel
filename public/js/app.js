@@ -21,6 +21,12 @@ $(document).ready(function()
         'format': 'L'
     });
 
+    $('.timepicker').datetimepicker({
+        //minView: 2,
+        format: 'hh:mm'
+
+    });
+
     $("a.btn-remover").click(function(e)
     {
         e.preventDefault();
