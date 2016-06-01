@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Support\Validators\Rules;
+<?php namespace App\Support\Validators\Rules;
 
 use App\Support\Helpers\Dates as DateHelper;
 

@@ -48,7 +48,7 @@
             <div class="form-group">
                 {!! Form::label('data_inicio', 'Data Início', ['class' => 'control-label']) !!}
                 <div class="input-group date datepicker">
-                    {!! Form::text('data_inicio', null, ['class' => 'form-control datepicker', 'id' => 'data_inicio']) !!}
+                    {!! Form::text('data_inicio', null, ['class' => 'form-control masked-date-input', 'id' => 'data_inicio']) !!}
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -58,8 +58,8 @@
         <div class="col-md-2">
             <div class="form-group">
                 {!! Form::label('hora_inicio', 'Hora Início', ['class' => 'control-label']) !!}
-                <div class="input-group date timepicker">
-                    {!! Form::text('hora_inicio', null, ['class' => 'form-control timepicker', 'id' => 'hora_inicio']) !!}
+                <div class="input-group">
+                    {!! Form::text('hora_inicio', null, ['class' => 'form-control masked-time-input', 'id' => 'hora_inicio']) !!}
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-time"></span>
                     </span>
@@ -72,7 +72,7 @@
             <div class="form-group">
                 {!! Form::label('data_chegada', 'Data Início', ['class' => 'control-label']) !!}
                 <div class="input-group date datepicker">
-                    {!! Form::text('data_chegada', null, ['class' => 'form-control datepicker', 'id' => 'data_chegada']) !!}
+                    {!! Form::text('data_chegada', null, ['class' => 'form-control masked-date-input', 'id' => 'data_chegada']) !!}
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -83,7 +83,7 @@
             <div class="form-group">
                 {!! Form::label('hora_chegada', 'Hora Chegada', ['class' => 'control-label']) !!}
                 <div class="input-group date timepicker">
-                    {!! Form::text('hora_chegada', null, ['class' => 'form-control timepicker', 'id' => 'hora_chegada']) !!}
+                    {!! Form::text('hora_chegada', null, ['class' => 'form-control masked-time-input', 'id' => 'hora_chegada']) !!}
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-time"></span>
                     </span>

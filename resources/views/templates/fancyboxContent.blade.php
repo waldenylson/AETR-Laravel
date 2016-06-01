@@ -27,6 +27,8 @@
 	<script src="{!! asset('js/momentjs.pt-br.js') !!}" type="text/javascript"></script>
 	<script src="{!! asset('bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') !!}" type="text/javascript"></script>
 
+	<script src="{!! asset('bower_components/jquery-mask-plugin/dist/jquery.mask.min.js') !!}" type="text/javascript"></script>
+
 	<script src="{!! asset('bower_components/ckeditor/ckeditor.js') !!}" type="text/javascript"></script>
 
 	<script src="{!! asset('js/app.js') !!}" type="text/javascript"></script>

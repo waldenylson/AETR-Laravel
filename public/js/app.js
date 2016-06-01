@@ -16,16 +16,10 @@ $(document).ready(function()
         }
     });
 
+    $('.datepicker').datetimepicker({ 'format': 'L' });
 
-    $('.datepicker').datetimepicker({
-        'format': 'L'
-    });
-
-    $('.timepicker').datetimepicker({
-        //minView: 2,
-        format: 'hh:mm'
-
-    });
+    $('.masked-date-input').mask('00/00/0000', {placeholder: '__/__/____'});
+    $('.masked-time-input').mask('00:00', {placeholder: 'HH:MM'});
 
     $("a.btn-remover").click(function(e)
     {
