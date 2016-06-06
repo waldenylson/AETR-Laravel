@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'pt_BR',
 
     /*
     |--------------------------------------------------------------------------
@@ -161,6 +161,11 @@ return [
          *  Deug bar
          */
         Barryvdh\Debugbar\ServiceProvider::class,
+
+        /**
+         *  Helper Para datas
+         */
+        App\Support\Validators\CustomValidatorsServiceProvider::class,
     ],
 
     /*

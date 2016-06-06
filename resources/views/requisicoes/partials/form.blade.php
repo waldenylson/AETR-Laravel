@@ -16,7 +16,7 @@
         </div>
         <div class="col-md-2">
             {!! Form::label('requisitante', 'Requisitante', ['class' => 'control-label']) !!}
-            {!! Form::text('requisitante', null, ['class' => 'form-control', 'id' => 'requisitante']) !!}
+            {!! Form::text('requisitante', null, ['class' => 'form-control', 'id' => 'requisitante', 'autofocus']) !!}
         </div>
         <div class="col-md-2">
             {!! Form::label('setor', 'Setor', ['class' => 'control-label']) !!}

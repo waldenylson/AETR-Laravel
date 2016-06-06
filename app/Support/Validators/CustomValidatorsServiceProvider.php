@@ -1,6 +1,4 @@
-<?php
-
-namespace App\Support\Validators;
+<?php namespace App\Support\Validators;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Factory as ValidatorFactory;
@@ -19,7 +17,7 @@ class CustomValidatorsServiceProvider extends ServiceProvider
     {
         $validator->extend(
             'valid_date_format',
-            'App\Support\Validators\Rules\DateField@rule'
+            'App\Support\Validators\DateField@rule'
         );
     }
 

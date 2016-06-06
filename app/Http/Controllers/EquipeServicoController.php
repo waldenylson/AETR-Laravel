@@ -48,10 +48,6 @@ class EquipeServicoController extends Controller
      */
     public function store(StoreEquipeServicoPostRequest $request)
     {
-        dd(Carbon::toDateString($request['data']));
-
-        //$request['data'] = Carbon::parse()
-
         $equipe = $this->equipeRepository->storeEquipeServico($request);
 
         return redirect()->back()->with('message', 'Registro Inserido com Sucesso!');

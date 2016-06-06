@@ -25,7 +25,7 @@ class StoreEquipeServicoPostRequest extends FormRequest
             'despachante' => 'required|min:5',
             'motorista1'  => 'required|min:5',
             'motorista2'  => 'required|min:5',
-            'data'        => 'required',
+            'data'        => 'required|valid_date_format',
         ];
     }
 

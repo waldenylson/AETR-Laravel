@@ -5,6 +5,8 @@ use App\AETR\Contracts\ViaturasRepository as ViaturasRepositoryContract;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Support\Validators\CustomValidatorsServiceProvider;
+use Illuminate\Support\Facades\Validator;
 
 class RequisicoesController extends Controller
 {
@@ -51,7 +53,7 @@ class RequisicoesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

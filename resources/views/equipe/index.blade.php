@@ -19,10 +19,10 @@
             <tbody>
             @foreach($equipes as $equipe)
                 <tr>
-                    <td>{!! $equipe->despachante     !!}</td>
-                    <td>{!! $equipe->motorista1  !!}</td>
-                    <td>{!! $equipe->motorista2  !!}</td>
-                    <td>{!! \Carbon\Carbon::parse($equipe->data)->format('d/m/Y') !!}</td>
+                    <td>{!! $equipe->despachante  !!}</td>
+                    <td>{!! $equipe->motorista1   !!}</td>
+                    <td>{!! $equipe->motorista2   !!}</td>
+                    <td>{!! $equipe->data         !!}</td>
 
                     <td width="1%" nowrap>
                         <a href="{!! route('equipe.edit', $equipe->id) !!}" class="btn btn-primary btn-xs">

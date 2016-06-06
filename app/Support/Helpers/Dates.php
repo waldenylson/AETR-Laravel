@@ -15,7 +15,7 @@ class Dates {
             return false;
         }
         
-        $date=explode("-", $date);
+        $date = explode("-", $date);
         
         return checkdate($date[1], $date[2], $date[0]);
     }
@@ -31,7 +31,7 @@ class Dates {
             return false;
         }
         
-        $date=explode("/", $date);
+        $date = explode("/", $date);
         
         return checkdate($date[1], $date[0], $date[2]);
     }
@@ -61,12 +61,12 @@ class Dates {
         }
 
         if(static::isInternationalValid($value)) {
-            return Carbon::createFromFormat('Y-m-d', $value);
+            return Carbon::createFromFormat('Y-m-d', $value)->toDateString();
         }
 
         if(static::isBrazilianValid($value))
         {
-            return Carbon::createFromFormat('d/m/Y', $value);
+            return Carbon::createFromFormat('d/m/Y', $value)->toDateString();
         }
 
         throw new \InvalidArgumentException("[{$value}] not is valid date");

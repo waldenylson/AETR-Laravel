@@ -24,7 +24,7 @@
             "App\\": "app/",
             "Models\\": "app/Models/",
             "AETR\\": "app/AETR/",
-            "Suport\\": "app/Suport/"
+            "Support\\": "app/Support/"
         }
     },
     "autoload-dev": {

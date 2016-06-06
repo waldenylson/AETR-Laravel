@@ -26,7 +26,7 @@
             <div class="form-group">
                 {!! Form::label('data', 'Data', ['class' => 'control-label']) !!}
                 <div class="input-group date datepicker">
-                    {!! Form::text('data', null, ['class' => 'form-control datepicker', 'id' => 'data']) !!}
+                    {!! Form::text('data', null, ['class' => 'form-control masked-date-input', 'id' => 'data']) !!}
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
