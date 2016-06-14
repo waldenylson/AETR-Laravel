@@ -12,12 +12,14 @@ class CreateRequisicoesTable extends Migration
      */
     public function up()
     {
-        Schema::create('requisicoes', function (Blueprint $table) {
+        Schema::create('requisicoes', function (Blueprint $table)
+        {
             $table->increments('id');
 
             $table->integer('viatura_id')->unsigned();
             $table->integer('equipe_servico_id')->unsigned();
             $table->integer('natureza_missao_id')->unsigned();
+            $table->string('requisitante');
             $table->string('setor');
             $table->string('ramal');
             $table->string('apresentar_se');
@@ -29,7 +31,7 @@ class CreateRequisicoesTable extends Migration
             $table->integer('odometro_chegada');
             $table->date('data_chegada');
             $table->time('hora_chegada');
-            $table->boolean('finalizada');
+            $table->boolean('finalizada')->nullable()->default(false);
 
             $table->foreign('viatura_id')->references('id')->on('viaturas');
             $table->foreign('equipe_servico_id')->references('id')->on('equipe_servico');
