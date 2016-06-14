@@ -166,6 +166,11 @@ return [
          *  Helper Para datas
          */
         App\Support\Validators\CustomValidatorsServiceProvider::class,
+
+        /**
+         *  Tradução Carbon
+         */
+        App\Providers\CarbonLanguageProvider::class,
     ],
 
     /*

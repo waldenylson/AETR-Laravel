@@ -39,6 +39,7 @@ class StoreEquipeServicoPostRequest extends FormRequest
             'motorista2.required'     	=> 'Campo Motorista II é Obrigatório!',
             'motorista2.min'          	=> 'O campo Motorista II deve ter pelo menos :min caracteres!',
             'data.required'             => 'O campo Data é obrigatório',
+            'data.valid_date_format'    => 'Formato de data inválido',
         ];
     }
 }
