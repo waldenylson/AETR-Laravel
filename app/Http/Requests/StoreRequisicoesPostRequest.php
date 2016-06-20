@@ -25,33 +25,37 @@ class StoreRequisicoesPostRequest extends FormRequest
             'equipe_servico_id'         =>  'required',
             'natureza_missao_id'        =>  'required',
             'viatura_id'                =>  'required',
-            'setor'                     =>  'required|min:5',
-            'ramal'                     =>  'required|min:5',
+            'requisitante'              =>  'required|min:5',
+            'setor'                     =>  'required|min:4',
+            'ramal'                     =>  'required',
             'apresentar_se'             =>  'required|min:5',
             'data_inicio'               =>  'required|valid_date_format',
-            'hora__inicio'              =>  'required',
-            'data_chegada'              =>  'required|valid_date_format',
-            'hora__chegada'             =>  'required',
+            'hora_inicio'               =>  'required',
             'destino'                   =>  'required|min:5',
             'observacoes'               =>  'required|min:5',
             'odometro_saida'            =>  'required|',
-            'odometro_chegada'          =>  'required|min:5',
         ];
     }
 
     public function messages()
     {
         return [
-            'equipe_servico_id.required'    =>  'Equipe de Serviço é Obrigatório!',
-            'natureza_missao_id.required'   =>  'Natureza de Missão é Obrigatório!',
-            'viatura_id.required'          	=>  'Viatura é Obrigatório!',
-            'setor.required'     	        =>  'Setor é Obrigatório!',
-            'ramal.required'          	    =>  'Ramal é Obrigatório!',
+            'equipe_servico_id.required'        =>  'Equipe de Serviço é Obrigatório!',
+            'natureza_missao_id.required'       =>  'Natureza de Missão é Obrigatório!',
+            'viatura_id.required'          	    =>  'Viatura é Obrigatório!',
+            'requisitante.required'             =>  'Requisitante é Obrigatório!',
+            'requisitante.min'                  =>  'Requisitante deve ter pelo menos 5 caracteres!',
+            'setor.required'     	            =>  'Setor é Obrigatório!',
+            'setor.min'          	            =>  'Setor deve ter pelo menos 5 caracteres!',
+            'ramal.required'          	        =>  'Ramal é Obrigatório!',
             'apresentar_se.required'     	    =>  'Mais Antigo a Apresentar-se é Obrigatório!',
             'data_inicio.required'          	=>  'Data de Início é Obrigatório!',
-            'data_inicio.valid_date_format'     => 'Formato de data inválido',
-            'hora_inicio.required'              => 'Hora de início é Obrigatório',
-            'destino.required'                  => 'Destino é Obrigatório!',
+            'data_inicio.valid_date_format'     =>  'Formato de data inválido',
+            'hora_inicio.required'              =>  'Hora de início é Obrigatório',
+            'destino.required'                  =>  'Destino é Obrigatório!',
+            'destino.min'                       =>  'Destino deve ter pelo menos 5 caracteres!',
+            'observacoes.required'              =>  'Obsevações deve ter pelo menos 5 caracteres',
+            'odometro_saida.required'           =>  'Odômetro de Saída é Obrigatório!'
         ];
     }
 }

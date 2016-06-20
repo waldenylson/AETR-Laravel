@@ -8,7 +8,7 @@
     </div>
 @endif
 
-<div class="form-group well">
+<div class="form-group well matheus">
     <div class="row">
         <div class="col-md-2">
             {!! Form::label('id', 'Número', ['class' => 'control-label']) !!}
@@ -27,8 +27,8 @@
             {!! Form::text('ramal', null, ['class' => 'form-control', 'id' => 'ramal']) !!}
         </div>
         <div class="col-md-2">
-            {!! Form::label('natureza_id', 'Natureza Missão', ['class' => 'control-label']) !!}
-            {!! Form::select('natureza_id', $naturezas, null, ['class' => 'form-control', 'id' => 'natureza_id']) !!}
+            {!! Form::label('natureza_missao_id', 'Natureza Missão', ['class' => 'control-label']) !!}
+            {!! Form::select('natureza_missao_id', $naturezas, null, ['class' => 'form-control', 'id' => 'natureza_missao_id']) !!}
         </div>
     </div><br>
     <div class="row">
@@ -70,7 +70,7 @@
     <div class="row">
         <div class="col-md-2">
             <div class="form-group">
-                {!! Form::label('data_chegada', 'Data Início', ['class' => 'control-label']) !!}
+                {!! Form::label('data_chegada', 'Data Chegada', ['class' => 'control-label']) !!}
                 <div class="input-group date datepicker">
                     {!! Form::text('data_chegada', null, ['class' => 'form-control masked-date-input', 'id' => 'data_chegada']) !!}
                     <span class="input-group-addon">
@@ -98,6 +98,7 @@
             {!! Form::label('odometro_chegada', 'Odômetro Chegada', ['class' => 'control-label']) !!}
             {!! Form::number('odometro_chegada', null, ['class' => 'form-control', 'id' => 'odometro_chegada']) !!}
         </div>
+
     </div><br>
     <div class="row">
         <div class="col-md-4">

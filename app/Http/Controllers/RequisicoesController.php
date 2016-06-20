@@ -60,6 +60,8 @@ class RequisicoesController extends Controller
      */
     public function store(StoreRequisicoesPostRequest $request)
     {
+        dd($request);
+
         $requisicao = $this->requisicoesRepository->storeRequisicao($request);
 
         return redirect()->back()->with('message', 'Registro Inserido com Sucesso!');
