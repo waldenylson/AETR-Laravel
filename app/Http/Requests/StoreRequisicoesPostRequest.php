@@ -32,7 +32,7 @@ class StoreRequisicoesPostRequest extends FormRequest
             'data_inicio'               =>  'required|valid_date_format',
             'hora_inicio'               =>  'required',
             'destino'                   =>  'required|min:5',
-            'observacoes'               =>  'required|min:5',
+            'observacoes'               =>  'min:5',
             'odometro_saida'            =>  'required|',
         ];
     }
@@ -54,7 +54,7 @@ class StoreRequisicoesPostRequest extends FormRequest
             'hora_inicio.required'              =>  'Hora de início é Obrigatório',
             'destino.required'                  =>  'Destino é Obrigatório!',
             'destino.min'                       =>  'Destino deve ter pelo menos 5 caracteres!',
-            'observacoes.required'              =>  'Obsevações deve ter pelo menos 5 caracteres',
+            'observacoes.min'              =>  'Obsevações deve ter pelo menos 5 caracteres',
             'odometro_saida.required'           =>  'Odômetro de Saída é Obrigatório!'
         ];
     }

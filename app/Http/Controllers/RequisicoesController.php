@@ -7,8 +7,6 @@ use App\AETR\Contracts\ViaturasRepository       as ViaturasRepositoryContract;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRequisicoesPostRequest;
-use App\Support\Validators\CustomValidatorsServiceProvider;
-use Illuminate\Support\Facades\Validator;
 
 class RequisicoesController extends Controller
 {

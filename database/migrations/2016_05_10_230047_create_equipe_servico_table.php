@@ -19,6 +19,7 @@ class CreateEquipeServicoTable extends Migration
             $table->string('motorista1');
             $table->string('motorista2');
             $table->date('data');
+            $table->boolean('finalizado')->nullable()->default(false);;
 
             $table->timestamps();
         });
