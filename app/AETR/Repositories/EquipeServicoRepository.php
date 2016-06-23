@@ -9,6 +9,13 @@ use App\Models\EquipeServico;
 class EquipeServicoRepository implements EquipeServicoRepositoryContract
 {
 
+    public function getAllRecordsOpen()
+    {
+        $equipes = EquipeServico::where('finalizado', 1)->get();
+
+        return $equipes;
+    }
+
     public function getAllRecords()
     {
         $equipes = EquipeServico::all();
