@@ -28,9 +28,9 @@ class CreateRequisicoesTable extends Migration
             $table->string('destino');
             $table->text('observacoes');
             $table->integer('odometro_saida');
-            $table->integer('odometro_chegada');
-            $table->date('data_chegada');
-            $table->time('hora_chegada');
+            $table->integer('odometro_chegada')->nullable();
+            $table->date('data_chegada')->nullable();
+            $table->time('hora_chegada')->nullable();
             $table->boolean('finalizada')->nullable()->default(false);
 
             $table->foreign('viatura_id')->references('id')->on('viaturas');

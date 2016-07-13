@@ -8,10 +8,12 @@ use App\Models\EquipeServico;
 
 class EquipeServicoRepository implements EquipeServicoRepositoryContract
 {
+    private $true  = 1;
+    private $false = 0;
 
     public function getAllRecordsOpen()
     {
-        $equipes = EquipeServico::where('finalizado', 1)->get();
+        $equipes = EquipeServico::where('finalizado', $this->false)->get();
 
         return $equipes;
     }
@@ -21,6 +23,13 @@ class EquipeServicoRepository implements EquipeServicoRepositoryContract
         $equipes = EquipeServico::all();
 
         return $equipes;
+    }
+
+    public function updateStatus($id)
+    {
+        $equipe = EquipeServico::findOrFail($id)->update(['finalizado' => $this->true]);
+
+        return $equipe;
     }
 
     public function storeEquipeServico(StoreEquipeServicoPostRequest $request)

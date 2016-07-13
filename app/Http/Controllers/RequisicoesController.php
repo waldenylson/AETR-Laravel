@@ -3,6 +3,7 @@
 use App\AETR\Contracts\NaturezasRepository      as NaturezasRepositoryContract;
 use App\AETR\Contracts\RequisicoesRepository    as RequisicoesRepositoryContract;
 use App\AETR\Contracts\ViaturasRepository       as ViaturasRepositoryContract;
+use App\AETR\Contracts\EquipeServicoRepository  as EquipeServicoRepositoryContract;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -14,15 +15,24 @@ class RequisicoesController extends Controller
     /**
      * @var $viaturasRepository Instancia da Classe ViaturasRepository
      */
-    protected $viaturasRepository, $naturezasRepository, $requisicoesRepository;
+    protected $viaturasRepository, $naturezasRepository, $requisicoesRepository, $equipeRepository;
 
+    /**
+     * RequisicoesController constructor.
+     * @param ViaturasRepositoryContract $viaturasRepository
+     * @param NaturezasRepositoryContract $naturezasRepository
+     * @param RequisicoesRepositoryContract $requisicoesRepository
+     * @param EquipeServicoRepositoryContract $equipeRepository
+     */
     public function __construct(ViaturasRepositoryContract      $viaturasRepository,
                                 NaturezasRepositoryContract     $naturezasRepository,
-                                RequisicoesRepositoryContract   $requisicoesRepository)
+                                RequisicoesRepositoryContract   $requisicoesRepository,
+                                EquipeServicoRepositoryContract $equipeRepository)
     {
         $this->viaturasRepository       = $viaturasRepository;
         $this->naturezasRepository      = $naturezasRepository;
         $this->requisicoesRepository    = $requisicoesRepository;
+        $this->equipeRepository         = $equipeRepository;
     }
 
     /**
@@ -44,10 +54,13 @@ class RequisicoesController extends Controller
      */
     public function create()
     {
-        $viaturas  = $this->viaturasRepository->getAllViaturasForSelect();
-        $naturezas = $this->naturezasRepository->getAllNaturezasForSelect();
+        $viaturas       = $this->viaturasRepository->getAllViaturasForSelect();
+        $naturezas      = $this->naturezasRepository->getAllNaturezasForSelect();
+        $equipe         = $this->equipeRepository->getAllRecordsOpen();
 
-        return view('requisicoes.create')->with(compact('viaturas'))->with(compact('naturezas'));
+        return view('requisicoes.create')->with(compact('viaturas'))
+                                         ->with(compact('naturezas'))
+                                         ->with(compact('equipe'));
     }
 
     /**
@@ -58,7 +71,7 @@ class RequisicoesController extends Controller
      */
     public function store(StoreRequisicoesPostRequest $request)
     {
-        dd($request);
+        //dd($request);
 
         $requisicao = $this->requisicoesRepository->storeRequisicao($request);
 

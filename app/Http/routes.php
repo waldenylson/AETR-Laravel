@@ -77,10 +77,11 @@ Route::group(['prefix' => 'requisicao', 'middleware' => 'auth'], function()
 
 Route::group(['prefix' => 'equipeservico', 'middleware' => 'auth'], function()
 {
-    Route::get(''                , ['as' => 'equipe.index'   , 'uses' => 'EquipeServicoController@index']);
-    Route::get('cadastrar'       , ['as' => 'equipe.create'  , 'uses' => 'EquipeServicoController@create']);
-    Route::post('salvar'         , ['as' => 'equipe.store'   , 'uses' => 'EquipeServicoController@store']);
-    Route::get('{id}/editar'     , ['as' => 'equipe.edit'    , 'uses' => 'EquipeServicoController@edit']);
-    Route::post('{id}/atualizar' , ['as' => 'equipe.update'  , 'uses' => 'EquipeServicoController@update']);
-    Route::get('{id}/remover'    , ['as' => 'equipe.destroy' , 'uses' => 'EquipeServicoController@destroy']);
+    Route::get(''                   , ['as' => 'equipe.index'         , 'uses' => 'EquipeServicoController@index']);
+    Route::get('cadastrar'          , ['as' => 'equipe.create'        , 'uses' => 'EquipeServicoController@create']);
+    Route::post('salvar'            , ['as' => 'equipe.store'         , 'uses' => 'EquipeServicoController@store']);
+    Route::get('{id}/editar'        , ['as' => 'equipe.edit'          , 'uses' => 'EquipeServicoController@edit']);
+    Route::post('{id}/atualizar'    , ['as' => 'equipe.update'        , 'uses' => 'EquipeServicoController@update']);
+    Route::get('{id}/updateStatus'  , ['as' => 'equipe.updateStatus'  , 'uses' => 'EquipeServicoController@updateStatus']);
+    Route::get('{id}/remover'       , ['as' => 'equipe.destroy'       , 'uses' => 'EquipeServicoController@destroy']);
 });

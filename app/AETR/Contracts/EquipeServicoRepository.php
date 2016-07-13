@@ -10,4 +10,5 @@ interface EquipeServicoRepository
     public function editEquipeServico($id);
     public function updateEquipeServico(StoreEquipeServicoPostRequest $request, $id);
     public function destroyEquipeServico($id);
+    public function updateStatus($id);
 }

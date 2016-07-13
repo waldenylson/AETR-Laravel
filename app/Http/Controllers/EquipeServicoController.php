@@ -3,7 +3,6 @@
 use App\Http\Requests\StoreEquipeServicoPostRequest;
 use App\AETR\Contracts\EquipeServicoRepository as EquipeServicoRepositoryContract;
 use App\Http\Controllers\Controller;
-use Carbon\Carbon;
 
 class EquipeServicoController extends Controller
 {
@@ -75,9 +74,24 @@ class EquipeServicoController extends Controller
      */
     public function update(StoreEquipeServicoPostRequest $request, $id)
     {
-        $equipe = $this->equipeRepository->updateEquipeServico($request, $id);
+        $result = $this->equipeRepository->updateEquipeServico($request, $id);
 
-        return redirect()->back()->with('message', 'Registro Atualizado com Sucesso!');
+        if ($result) {
+            return redirect()->back()->with('message', 'Registro Atualizado com Sucesso!');
+        }
+
+        return redirect()->back()->with('error', 'Erro ao Tentar Remover o Registro!');
+    }
+
+    public function updateStatus($id)
+    {
+        $result = $this->equipeRepository->updateStatus($id);
+
+        if ($result) {
+            return redirect()->back()->with('message', 'Equipe encerrada com Sucesso!');
+        }
+
+        return redirect()->back()->with('error', 'Erro ao Tentar Alterar o Status p/ Finalizado!');
     }
 
     /**

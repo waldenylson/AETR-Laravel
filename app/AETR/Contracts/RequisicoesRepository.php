@@ -6,6 +6,8 @@ use App\Http\Requests\StoreRequisicoesPostRequest;
 interface RequisicoesRepository
 {
     public function getAllRecords();
+
+    public function getUltimoOdometroViatura($viatura_id);
     public function storeRequisicao(StoreRequisicoesPostRequest $request);
     public function editRequisicao($id);
     public function updateRequisicao(StoreRequisicoesPostRequest $request, $id);

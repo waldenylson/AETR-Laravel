@@ -46,6 +46,31 @@ $(document).ready(function()
             });
     });
 
+    $("a.btn-finalizar").click(function(e)
+    {
+        e.preventDefault();
+        var link = $(this).attr('href');
+
+        swal(
+            {
+                title: "Deseja Mesmo Finalizar o Serviço?",
+                text: "Esta operação não poderá ser desfeita!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Sim, Finalize-o!",
+                cancelButtonText: "Cancelar",
+                closeOnConfirm: false
+            },
+            function(isConfirm)
+            {
+                if (isConfirm)
+                {
+                    window.location = link;
+                }
+            });
+    });
+
     $("#btn-cancelar").click(function()
     {
         parent.$.fancybox.close();

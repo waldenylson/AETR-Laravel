@@ -98,7 +98,11 @@
             {!! Form::label('odometro_chegada', 'Odômetro Chegada', ['class' => 'control-label']) !!}
             {!! Form::number('odometro_chegada', null, ['class' => 'form-control', 'id' => 'odometro_chegada']) !!}
         </div>
-
+        <div class="col-md-2">
+            {!! Form::label('equipe_servico_id', 'Despachante / Equipe SV', ['class' => 'control-label']) !!}
+            {!! Form::hidden('equipe_servico_id', $equipe[0]['id'], ['class' => 'form-control', 'id' => 'equipe_servico_id']) !!}
+            {!! Form::text('', $equipe[0]['despachante'], ['class' => 'form-control']) !!}
+        </div>
     </div><br>
     <div class="row">
         <div class="col-md-4">
