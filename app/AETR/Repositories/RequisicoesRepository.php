@@ -17,7 +17,7 @@ class RequisicoesRepository implements RequisicoesRepositoryContract
     {
         $requisicao = Requisicoes::where('viatura_id', $viatura_id)->orderBy('id', 'asc')->first();
 
-        return $ultimoOdometro = $requisicao->odometro_saida;
+        return $requisicao instanceof Requisicoes ? $requisicao->odometro_saida : null;
     }
 
     public function storeRequisicao(StoreRequisicoesPostRequest $request)

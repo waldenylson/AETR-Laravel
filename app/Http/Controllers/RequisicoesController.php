@@ -59,6 +59,8 @@ class RequisicoesController extends Controller
         $equipe          = $this->equipeRepository->getAllRecordsOpen();
         $ultimoOdometro  = $this->requisicoesRepository->getUltimoOdometroViatura($viatura_id);
 
+        //dd($ultimoOdometro);
+
         return view('requisicoes.create')->with(compact('viaturas'))
                                          ->with(compact('naturezas'))
                                          ->with(compact('equipe'))
