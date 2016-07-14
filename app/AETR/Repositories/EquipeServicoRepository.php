@@ -22,7 +22,7 @@ class EquipeServicoRepository implements EquipeServicoRepositoryContract
     {
         $equipes = EquipeServico::all();
 
-        return $equipes;
+        return $equipes->sortBy('data');
     }
 
     public function updateStatus($id)

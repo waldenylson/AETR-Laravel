@@ -24,10 +24,10 @@ class RequisicoesController extends Controller
      * @param RequisicoesRepositoryContract $requisicoesRepository
      * @param EquipeServicoRepositoryContract $equipeRepository
      */
-    public function __construct(ViaturasRepositoryContract      $viaturasRepository,
-                                NaturezasRepositoryContract     $naturezasRepository,
-                                RequisicoesRepositoryContract   $requisicoesRepository,
-                                EquipeServicoRepositoryContract $equipeRepository)
+    public function __construct(ViaturasRepositoryContract       $viaturasRepository,
+                                NaturezasRepositoryContract      $naturezasRepository,
+                                RequisicoesRepositoryContract    $requisicoesRepository,
+                                EquipeServicoRepositoryContract  $equipeRepository)
     {
         $this->viaturasRepository       = $viaturasRepository;
         $this->naturezasRepository      = $naturezasRepository;
@@ -52,15 +52,18 @@ class RequisicoesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($viatura_id = null)
     {
-        $viaturas       = $this->viaturasRepository->getAllViaturasForSelect();
-        $naturezas      = $this->naturezasRepository->getAllNaturezasForSelect();
-        $equipe         = $this->equipeRepository->getAllRecordsOpen();
+        $viaturas        = $this->viaturasRepository->getAllViaturasForSelect();
+        $naturezas       = $this->naturezasRepository->getAllNaturezasForSelect();
+        $equipe          = $this->equipeRepository->getAllRecordsOpen();
+        $ultimoOdometro  = $this->requisicoesRepository->getUltimoOdometroViatura($viatura_id);
 
         return view('requisicoes.create')->with(compact('viaturas'))
                                          ->with(compact('naturezas'))
-                                         ->with(compact('equipe'));
+                                         ->with(compact('equipe'))
+                                         ->with(compact('ultimoOdometro'))
+                                         ->with(compact('viatura_id'));
     }
 
     /**
@@ -71,11 +74,15 @@ class RequisicoesController extends Controller
      */
     public function store(StoreRequisicoesPostRequest $request)
     {
-        //dd($request);
+        dd($request);
 
-        $requisicao = $this->requisicoesRepository->storeRequisicao($request);
+        $result = $this->requisicoesRepository->storeRequisicao($request);
 
-        return redirect()->back()->with('message', 'Registro Inserido com Sucesso!');
+        if ($result) {
+            return redirect()->back()->with('message', 'Registro Inserido com Sucesso!');
+        }
+
+        return redirect()->back()->with('error', 'Erro ao Tentar Inserir o Registro!');
     }
 
     /**
@@ -100,9 +107,13 @@ class RequisicoesController extends Controller
      */
     public function update(StoreRequisicoesPostRequest $request, $id)
     {
-        $requisicao = $this->requisicoesRepository->updateRequisicao($request, $id);
+        $result = $this->requisicoesRepository->updateRequisicao($request, $id);
 
-        return redirect()->back()->with('message', 'Registro Atualizado com Sucesso!');
+        if ($result) {
+            return redirect()->back()->with('message', 'Registro Atualizado com Sucesso!');
+        }
+
+        return redirect()->back()->with('error', 'Erro ao Tentar Atualizar o Registro!');
     }
 
     /**

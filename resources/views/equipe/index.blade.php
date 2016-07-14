@@ -25,14 +25,15 @@
                     <td>{!! $equipe->data         !!}</td>
 
                     <td width="1%" nowrap>
-                        <a href="{!! route('equipe.edit', $equipe->id) !!}" class="btn btn-primary btn-xs">
-                            <i class="fa fa-pencil"></i>&nbsp;&nbsp;editar&nbsp;
-                        </a>
-
-                        <a href="{!! route('equipe.destroy', $equipe->id) !!}" class="btn btn-danger btn-xs btn-remover">
-                            <i class="fa fa-remove"></i>&nbsp;&nbsp;remover&nbsp;
-                        </a>
                         @if($equipe->finalizado == 0)
+                            <a href="{!! route('equipe.edit', $equipe->id) !!}" class="btn btn-primary btn-xs">
+                                <i class="fa fa-pencil"></i>&nbsp;&nbsp;editar&nbsp;
+                            </a>
+
+                            <a href="{!! route('equipe.destroy', $equipe->id) !!}" class="btn btn-danger btn-xs btn-remover">
+                                <i class="fa fa-remove"></i>&nbsp;&nbsp;remover&nbsp;
+                            </a>
+
                             <a href="{!! route('equipe.updateStatus', $equipe->id) !!}" class="btn btn-warning btn-xs btn-finalizar">
                                 <i class="fa fa-power-off"></i>&nbsp;&nbsp;Finalizar&nbsp;&nbsp;&nbsp;
                             </a>

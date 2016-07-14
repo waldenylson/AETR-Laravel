@@ -5,7 +5,6 @@ use App\Http\Requests\StoreViaturasPostRequest;
 interface ViaturasRepository
 {
     public function getAllViaturas();
-
     public function getAllViaturasForSelect();
     public function storeViatura(StoreViaturasPostRequest $request);
     public function editViatura($id);

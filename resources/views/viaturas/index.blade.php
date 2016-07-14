@@ -26,11 +26,15 @@
 
                     <td width="1%" nowrap>
                         <a href="{!! route('viaturas.edit', $viatura->id) !!}" class="btn btn-primary btn-xs">
-                            <i class="fa fa-fw fa-pencil"></i> editar
+                            <i class="fa fa-pencil"></i> editar
                         </a>
 
                         <a href="{!! route('viaturas.destroy', $viatura->id) !!}" class="btn btn-danger btn-xs btn-remover">
-                            <i class="fa fa-fw fa-remove"></i> remover
+                            <i class="fa fa-remove"></i> remover
+                        </a>
+
+                        <a href="{!! route('requisicoes.create', $viatura->id) !!}" class="btn btn-success btn-xs">
+                            <i class="fa fa-edit"></i> Requisição
                         </a>
                     </td>
                 </tr>

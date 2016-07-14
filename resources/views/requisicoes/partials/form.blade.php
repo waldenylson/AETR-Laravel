@@ -34,7 +34,7 @@
     <div class="row">
         <div class="col-md-2">
             {!! Form::label('viatura_id', 'Viatura', ['class' => 'control-label']) !!}
-            {!! Form::select('viatura_id', $viaturas, null, ['class' => 'form-control', 'id' => 'viatura_id']) !!}
+            {!! Form::select('viatura_id', $viaturas, $viatura_id, ['class' => 'form-control', 'id' => 'viatura_id']) !!}
         </div>
         <div class="col-md-2">
             {!! Form::label('destino', 'Destino', ['class' => 'control-label']) !!}
@@ -92,6 +92,7 @@
         </div>
         <div class="col-md-2">
             {!! Form::label('odometro_saida', 'Odômetro Saída', ['class' => 'control-label']) !!}
+            @if()
             {!! Form::number('odometro_saida', null, ['class' => 'form-control', 'id' => 'odometro_saida']) !!}
         </div>
         <div class="col-md-2">
