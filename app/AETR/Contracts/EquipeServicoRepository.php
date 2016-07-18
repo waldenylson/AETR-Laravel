@@ -6,6 +6,7 @@ interface EquipeServicoRepository
 {
     public function getAllRecords();
     public function getAllRecordsOpen();
+    public function getOneRecordOnly($id);
     public function storeEquipeServico(StoreEquipeServicoPostRequest $request);
     public function editEquipeServico($id);
     public function updateEquipeServico(StoreEquipeServicoPostRequest $request, $id);

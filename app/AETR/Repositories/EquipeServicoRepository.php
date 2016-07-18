@@ -13,7 +13,7 @@ class EquipeServicoRepository implements EquipeServicoRepositoryContract
 
     public function getAllRecordsOpen()
     {
-        $equipes = EquipeServico::where('finalizado', $this->false)->get();
+        $equipes = EquipeServico::where('finalizado', $this->false)->first();
 
         return $equipes;
     }
@@ -22,7 +22,14 @@ class EquipeServicoRepository implements EquipeServicoRepositoryContract
     {
         $equipes = EquipeServico::all();
 
-        return $equipes->sortBy('data');
+        return $equipes;
+    }
+
+    public function getOneRecordOnly($id)
+    {
+        $equipe = EquipeServico::findOrFail($id);
+
+        return $equipe;
     }
 
     public function updateStatus($id)

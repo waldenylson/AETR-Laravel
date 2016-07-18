@@ -28,13 +28,21 @@
         </div>
         <div class="col-md-2">
             {!! Form::label('natureza_missao_id', 'Natureza Missão', ['class' => 'control-label']) !!}
-            {!! Form::select('natureza_missao_id', $naturezas, null, ['class' => 'form-control', 'id' => 'natureza_missao_id']) !!}
+            {!! !empty($requisicao) ? Form::select('natureza_missao_id', $naturezas, $requisicao->natureza_missao_id,
+                                            ['class' => 'form-control', 'id' => 'natureza_missao_id'])
+                                    : Form::select('natureza_missao_id', $naturezas, null,
+                                            ['class' => 'form-control', 'id' => 'natureza_missao_id'])
+            !!}
         </div>
     </div><br>
     <div class="row">
         <div class="col-md-2">
             {!! Form::label('viatura_id', 'Viatura', ['class' => 'control-label']) !!}
-            {!! Form::select('viatura_id', $viaturas, $viatura_id, ['class' => 'form-control', 'id' => 'viatura_id']) !!}
+            {!! !empty($requisicao) ? Form::select('viatura_id', $viaturas, $requisicao->viatura_id,
+                                            ['class' => 'form-control', 'id' => 'viatura_id'])
+                                    : Form::select('viatura_id', $viaturas, null,
+                                            ['class' => 'form-control', 'id' => 'viatura_id'])
+            !!}
         </div>
         <div class="col-md-2">
             {!! Form::label('destino', 'Destino', ['class' => 'control-label']) !!}
@@ -92,7 +100,11 @@
         </div>
         <div class="col-md-2">
             {!! Form::label('odometro_saida', 'Odômetro Saída', ['class' => 'control-label']) !!}
-            {!! Form::number('odometro_saida', null, ['class' => 'form-control', 'id' => 'odometro_saida']) !!}
+            {!! !is_null($ultimoOdometro) ? Form::number('odometro_saida', $ultimoOdometro,
+                                                    ['class' => 'form-control', 'id' => 'odometro_saida'])
+                                          : Form::number('odometro_saida', null,
+                                                    ['class' => 'form-control', 'id' => 'odometro_saida'])
+            !!}
         </div>
         <div class="col-md-2">
             {!! Form::label('odometro_chegada', 'Odômetro Chegada', ['class' => 'control-label']) !!}
@@ -100,8 +112,8 @@
         </div>
         <div class="col-md-2">
             {!! Form::label('equipe_servico_id', 'Despachante / Equipe SV', ['class' => 'control-label']) !!}
-            {!! Form::hidden('equipe_servico_id', $equipe[0]['id'], ['class' => 'form-control', 'id' => 'equipe_servico_id']) !!}
-            {!! Form::text('', $equipe[0]['despachante'], ['class' => 'form-control']) !!}
+                {!! Form::hidden('equipe_servico_id', $equipe->id, ['class' => 'form-control', 'id' => 'equipe_servico_id']) !!}
+                {!! Form::text('', $equipe->despachante, ['class' => 'form-control']) !!}
         </div>
     </div><br>
     <div class="row">

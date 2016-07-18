@@ -95,9 +95,24 @@ class RequisicoesController extends Controller
      */
     public function edit($id)
     {
-        $requisicao = $this->requisicoesRepository->editRequisicao($id);
+        $requisicao      = $this->requisicoesRepository->editRequisicao($id);
 
-        return view('requisicoes.edit')->with(compact('requisicao'));
+        //dd();
+
+        $viaturas        = $this->viaturasRepository->getAllViaturasForSelect();
+        $naturezas       = $this->naturezasRepository->getAllNaturezasForSelect();
+        $equipe          = $this->equipeRepository->getOneRecordOnly($requisicao->equipe_servico_id);
+
+        //dd($equipe);
+
+        return view('requisicoes.edit')->with(compact('requisicao'))
+                                       ->with(compact('viaturas'))
+                                       ->with(compact('naturezas'))
+                                       ->with(compact('equipe'));
+
+
+
+
     }
 
     /**

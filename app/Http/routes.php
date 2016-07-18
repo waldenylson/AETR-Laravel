@@ -32,7 +32,8 @@ Route::group(['prefix' => 'seguranca', 'namespace' => 'Auth'], function()
  *   destroy - Remove um Registro do Banco de Dados
  */
 
-Route::group(['prefix' => 'viaturas', 'middleware' => 'auth'], function()
+Route::group(['prefix' => 'viaturas'], function()
+//Route::group(['prefix' => 'viaturas', 'middleware' => 'auth'], function()
 {
     Route::get(''                , ['as' => 'viaturas.index'   , 'uses' => 'ViaturasController@index']);
     Route::get('cadastrar'       , ['as' => 'viaturas.create'  , 'uses' => 'ViaturasController@create']);
@@ -54,7 +55,8 @@ Route::group(['prefix' => 'viaturas', 'middleware' => 'auth'], function()
  *   destroy - Remove um Registro do Banco de Dados
  */
 
-Route::group(['prefix' => 'naturezas', 'middleware' => 'auth'], function()
+Route::group(['prefix' => 'naturezas'], function()
+//Route::group(['prefix' => 'naturezas', 'middleware' => 'auth'], function()
 {
     Route::get(''                , ['as' => 'naturezas.index'   , 'uses' => 'NaturezasController@index']);
     Route::get('cadastrar'       , ['as' => 'naturezas.create'  , 'uses' => 'NaturezasController@create']);
@@ -65,7 +67,8 @@ Route::group(['prefix' => 'naturezas', 'middleware' => 'auth'], function()
 });
 
 
-Route::group(['prefix' => 'requisicao', 'middleware' => 'auth'], function()
+Route::group(['prefix' => 'requisicao'], function()
+//Route::group(['prefix' => 'requisicao', 'middleware' => 'auth'], function()
 {
     Route::get(''                , ['as' => 'requisicoes.index'               , 'uses' => 'RequisicoesController@index']);
     Route::get('{id}/cadastrar'  , ['as' => 'requisicoes.create'              , 'uses' => 'RequisicoesController@create']);
@@ -75,7 +78,8 @@ Route::group(['prefix' => 'requisicao', 'middleware' => 'auth'], function()
     Route::get('{id}/remover'    , ['as' => 'requisicoes.destroy'             , 'uses' => 'RequisicoesController@destroy']);
 });
 
-Route::group(['prefix' => 'equipeservico', 'middleware' => 'auth'], function()
+Route::group(['prefix' => 'equipeservico'], function()
+//Route::group(['prefix' => 'equipeservico', 'middleware' => 'auth'], function()
 {
     Route::get(''                   , ['as' => 'equipe.index'         , 'uses' => 'EquipeServicoController@index']);
     Route::get('cadastrar'          , ['as' => 'equipe.create'        , 'uses' => 'EquipeServicoController@create']);
