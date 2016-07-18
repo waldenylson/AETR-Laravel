@@ -100,10 +100,10 @@
         </div>
         <div class="col-md-2">
             {!! Form::label('odometro_saida', 'Odômetro Saída', ['class' => 'control-label']) !!}
-            {!! !is_null($ultimoOdometro) ? Form::number('odometro_saida', $ultimoOdometro,
-                                                    ['class' => 'form-control', 'id' => 'odometro_saida'])
-                                          : Form::number('odometro_saida', null,
-                                                    ['class' => 'form-control', 'id' => 'odometro_saida'])
+            {!! (isset($odometro) && !is_null($ultimoOdometro)) ? Form::number('odometro_saida', $ultimoOdometro,
+                                                                        ['class' => 'form-control', 'id' => 'odometro_saida'])
+                                                                : Form::number('odometro_saida', null,
+                                                                        ['class' => 'form-control', 'id' => 'odometro_saida'])
             !!}
         </div>
         <div class="col-md-2">

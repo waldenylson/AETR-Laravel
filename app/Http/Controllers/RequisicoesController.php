@@ -109,10 +109,6 @@ class RequisicoesController extends Controller
                                        ->with(compact('viaturas'))
                                        ->with(compact('naturezas'))
                                        ->with(compact('equipe'));
-
-
-
-
     }
 
     /**
