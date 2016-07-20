@@ -40,7 +40,7 @@
             {!! Form::label('viatura_id', 'Viatura', ['class' => 'control-label']) !!}
             {!! !empty($requisicao) ? Form::select('viatura_id', $viaturas, $requisicao->viatura_id,
                                             ['class' => 'form-control', 'id' => 'viatura_id'])
-                                    : Form::select('viatura_id', $viaturas, null,
+                                    : Form::select('viatura_id', $viaturas, $viatura_id,
                                             ['class' => 'form-control', 'id' => 'viatura_id'])
             !!}
         </div>
@@ -100,10 +100,10 @@
         </div>
         <div class="col-md-2">
             {!! Form::label('odometro_saida', 'Odômetro Saída', ['class' => 'control-label']) !!}
-            {!! (isset($odometro) && !is_null($ultimoOdometro)) ? Form::number('odometro_saida', $ultimoOdometro,
-                                                                        ['class' => 'form-control', 'id' => 'odometro_saida'])
-                                                                : Form::number('odometro_saida', null,
-                                                                        ['class' => 'form-control', 'id' => 'odometro_saida'])
+            {!! (isset($ultimoOdometro) && !is_null($ultimoOdometro)) ? Form::number('odometro_saida', $ultimoOdometro,
+                                                                            ['class' => 'form-control', 'id' => 'odometro_saida'])
+                                                                      : Form::number('odometro_saida', null,
+                                                                            ['class' => 'form-control', 'id' => 'odometro_saida'])
             !!}
         </div>
         <div class="col-md-2">
