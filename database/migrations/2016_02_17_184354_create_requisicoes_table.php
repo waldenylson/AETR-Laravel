@@ -31,6 +31,7 @@ class CreateRequisicoesTable extends Migration
             $table->integer('odometro_chegada')->nullable();
             $table->date('data_chegada')->nullable();
             $table->time('hora_chegada')->nullable();
+            $table->string('motorista_externo_sv')->nullable();
             $table->boolean('finalizada')->nullable()->default(false);
 
             $table->foreign('viatura_id')->references('id')->on('viaturas');
