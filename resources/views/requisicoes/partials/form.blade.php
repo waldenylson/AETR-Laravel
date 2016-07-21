@@ -111,9 +111,9 @@
             {!! Form::number('odometro_chegada', null, ['class' => 'form-control', 'id' => 'odometro_chegada']) !!}
         </div>
         <div class="col-md-2">
-            {!! Form::label('equipe_servico_id', 'Despachante / Equipe SV', ['class' => 'control-label']) !!}
-                {!! Form::hidden('equipe_servico_id', $equipe->id, ['class' => 'form-control', 'id' => 'equipe_servico_id']) !!}
-                {!! Form::text('', $equipe->despachante, ['class' => 'form-control']) !!}
+            {!! Form::label('motorista_externo_sv', 'Motorista Externo SV', ['class' => 'control-label']) !!}
+            {!! Form::text('motorista_externo_sv', null, ['class' => 'form-control', 'id' => 'motorista_externo_sv', 'placeholder' => 'Nulo p/ Equipe SV']) !!}
+            {!! Form::hidden('equipe_servico_id', $equipe->id, ['class' => 'form-control', 'id' => 'equipe_servico_id']) !!}
         </div>
     </div><br>
     <div class="row">

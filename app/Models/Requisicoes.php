@@ -10,6 +10,11 @@ class Requisicoes extends Model
 
     protected $guarded = ['_token'];
 
+    public function viatura()
+    {
+        return $this->hasOne(Viaturas::class, 'id');
+    }
+
 
     public function getDataInicioAttribute($value)
     {
