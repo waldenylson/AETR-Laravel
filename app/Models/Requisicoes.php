@@ -8,11 +8,13 @@ class Requisicoes extends Model
 {
     use HasDateFieldsTrait;
 
+    protected $table = 'requisicoes';
+
     protected $guarded = ['_token'];
 
     public function viatura()
     {
-        return $this->hasOne(Viaturas::class, 'id');
+        return $this->hasOne(Viaturas::class);
     }
 
 
