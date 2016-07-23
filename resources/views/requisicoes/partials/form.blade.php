@@ -38,7 +38,7 @@
     <div class="row">
         <div class="col-md-2">
             {!! Form::label('viatura_id', 'Viatura', ['class' => 'control-label']) !!}
-            {!! !empty($requisicao) ? Form::select('viatura_id', $viaturas, $requisicao->viatura_id,
+            {!! !empty($requisicao) ? Form::select('viatura_id', $viaturas, $requisicao->viatura->id,
                                             ['class' => 'form-control', 'id' => 'viatura_id'])
                                     : Form::select('viatura_id', $viaturas, $viatura_id,
                                             ['class' => 'form-control', 'id' => 'viatura_id'])

@@ -12,6 +12,11 @@ class EquipeServico extends Model {
 
     protected $guarded = ['_token'];
 
+    public function requisicoes()
+    {
+        return $this->hasMany(Requisicoes::class, 'equipe_servico_id');
+    }
+
     public function getDataAttribute($value)
     {
         return Carbon::parse($this->valueToCarbonObject($value))->format('d/m/Y');

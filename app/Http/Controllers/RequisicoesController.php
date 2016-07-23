@@ -97,7 +97,7 @@ class RequisicoesController extends Controller
     {
         $requisicao      = $this->requisicoesRepository->editRequisicao($id);
 
-        dd($requisicao->viatura);
+        //dd($requisicao->motorista_externo_sv);
 
         $viaturas        = $this->viaturasRepository->getAllViaturasForSelect();
         $naturezas       = $this->naturezasRepository->getAllNaturezasForSelect();
