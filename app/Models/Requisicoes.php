@@ -14,6 +14,15 @@ class Requisicoes extends Model
 
 
     /**
+     *  Relacionamento com a tabela naturezas de missão
+     *  @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function natureza()
+    {
+        return $this->belongsTo(Naturezas::class, 'natureza_missao_id');
+    }
+
+    /**
      *  Relacionamento com a tabela de viaturas
      *  @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

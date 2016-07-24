@@ -9,23 +9,23 @@
         <table class="table table-bordered table-hover table-striped datatableimplements" cellspacing="0">
             <thead>
             <tr>
-                <th>DESPACHANTE</th>
-                <th>MOTORISTA I</th>
-                <th>MOTORISTA II</th>
-                <th>DATA</th>
+                <th>NÚMERO</th>
+                <th>REQUISITANTE</th>
+                <th>VIATURA</th>
+                <th>NATUREZA MISSÃO</th>
                 <th>AÇÕES</th>
             </tr>
             </thead>
             <tbody>
             @foreach($requisicoes as $requisicao)
                 <tr>
-                    <td>{!! $requisicao->despachante  !!}</td>
-                    <td>{!! $requisicao->motorista1   !!}</td>
-                    <td>{!! $requisicao->motorista2   !!}</td>
-                    <td>{!! $requisicao->data         !!}</td>
+                    <td>{!! $requisicao->id  !!}</td>
+                    <td>{!! $requisicao->requisitante  !!}</td>
+                    <td>{!! $requisicao->viatura->modelo ($requisicao->viatura->reg_fab)   !!}</td>
+                    <td>{!! $requisicao->natureza->titulo   !!}</td>
 
                     <td width="1%" nowrap>
-                        @if($requisicao->finalizado == 0)
+                        @if($requisicao->finalizada == 0)
                             <a href="{!! route('requisicao.edit', $requisicao->id) !!}" class="btn btn-primary btn-xs">
                                 <i class="fa fa-pencil"></i>&nbsp;&nbsp;editar&nbsp;
                             </a>
@@ -39,7 +39,10 @@
                             </a>
                         @else
                             <a class="btn btn-info btn-xs" disabled>
-                                <i class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;Finalizado&nbsp;
+                                <i class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;Finalizada&nbsp;
+                            </a>
+                            <a class="btn btn-info btn-xs">
+                                <i class="fa fa-eye"></i>&nbsp;&nbsp;Visualizar&nbsp;
                             </a>
                         @endif
                     </td>

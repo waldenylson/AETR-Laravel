@@ -1,4 +1,4 @@
-<?php namespace app\AETR\Repositories;
+<?php namespace App\AETR\Repositories;
 
 use App\AETR\Contracts\RequisicoesRepository as RequisicoesRepositoryContract;
 use App\Http\Requests\StoreRequisicoesPostRequest;
@@ -11,6 +11,13 @@ class RequisicoesRepository implements RequisicoesRepositoryContract
         $requisicoes = Requisicoes::all();
 
         return $requisicoes;
+    }
+
+    public function getAllRecordsWithRelacionamentos()
+    {
+        $requisicoes = Requisicoes::all();
+
+        return $requisicoes->load('viatura', 'natureza');
     }
 
     public function getUltimoOdometroViatura($viatura_id)

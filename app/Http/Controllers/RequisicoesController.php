@@ -42,7 +42,9 @@ class RequisicoesController extends Controller
      */
     public function index()
     {
-        $requisicoes = $this->requisicoesRepository->getAllRecords();
+        $requisicoes = $this->requisicoesRepository->getAllRecordsWithRelacionamentos();
+
+        dd($requisicoes['viatura']);
 
         return view('requisicoes.index')->with(compact('requisicoes'));
     }
@@ -97,7 +99,7 @@ class RequisicoesController extends Controller
     {
         $requisicao      = $this->requisicoesRepository->editRequisicao($id);
 
-        //dd($requisicao->motorista_externo_sv);
+        dd($requisicao);
 
         $viaturas        = $this->viaturasRepository->getAllViaturasForSelect();
         $naturezas       = $this->naturezasRepository->getAllNaturezasForSelect();
