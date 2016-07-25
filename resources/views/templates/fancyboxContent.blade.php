@@ -22,7 +22,6 @@
 
 	<script src="{!! asset('bower_components/datatables/media/js/jquery.dataTables.js') !!}" type="text/javascript"></script>
 	<script src="{!! asset('bower_components/datatables/media/js/dataTables.bootstrap.js') !!}" type="text/javascript"></script>
-	<script src="{!! asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js') !!}" type="text/javascript"></script>
 	<script src="{!! asset('bower_components/moment/min/moment.min.js') !!}" type="text/javascript"></script>
 	<script src="{!! asset('js/momentjs.pt-br.js') !!}" type="text/javascript"></script>
 	<script src="{!! asset('bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') !!}" type="text/javascript"></script>

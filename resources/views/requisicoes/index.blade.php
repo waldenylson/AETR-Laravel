@@ -54,6 +54,10 @@
                             <a class="btn btn-info btn-xs">
                                 <i class="fa fa-eye"></i>&nbsp;&nbsp;Visualizar&nbsp;
                             </a>
+
+                            <a class="btn btn-info btn-xs">
+                                <i class="fa fa-print"></i>&nbsp;&nbsp;Imprimir&nbsp;
+                            </a>
                         @endif
                     </td>
                 </tr>

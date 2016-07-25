@@ -59,13 +59,13 @@ Route::group(['prefix' => 'naturezas'], function()
 Route::group(['prefix' => 'requisicao'], function()
 //Route::group(['prefix' => 'requisicao', 'middleware' => 'auth'], function()
 {
-    Route::get(''                   , ['as' => 'requisicoes.index'    , 'uses' => 'RequisicoesController@index']);
-    Route::get('{id}/cadastrar'     , ['as' => 'requisicoes.create'   , 'uses' => 'RequisicoesController@create']);
-    Route::post('salvar'            , ['as' => 'requisicoes.store'    , 'uses' => 'RequisicoesController@store']);
-    Route::get('{id}/editar'        , ['as' => 'requisicoes.edit'     , 'uses' => 'RequisicoesController@edit']);
-    Route::post('{id}/atualizar'    , ['as' => 'requisicoes.update'   , 'uses' => 'RequisicoesController@update']);
-    Route::get('{id}/updateStatus'  , ['as' => 'requisicoes.updateStatus'  , 'uses' => 'EquipeServicoController@updateStatus']);
-    Route::get('{id}/remover'       , ['as' => 'requisicoes.destroy'  , 'uses' => 'RequisicoesController@destroy']);
+    Route::get(''                   , ['as' => 'requisicoes.index'         , 'uses' => 'RequisicoesController@index']);
+    Route::get('{id}/cadastrar'     , ['as' => 'requisicoes.create'        , 'uses' => 'RequisicoesController@create']);
+    Route::post('salvar'            , ['as' => 'requisicoes.store'         , 'uses' => 'RequisicoesController@store']);
+    Route::get('{id}/editar'        , ['as' => 'requisicoes.edit'          , 'uses' => 'RequisicoesController@edit']);
+    Route::post('{id}/atualizar'    , ['as' => 'requisicoes.update'        , 'uses' => 'RequisicoesController@update']);
+    Route::get('{id}/updateStatus'  , ['as' => 'requisicoes.updateStatus'  , 'uses' => 'RequisicoesController@updateStatus']);
+    Route::get('{id}/remover'       , ['as' => 'requisicoes.destroy'       , 'uses' => 'RequisicoesController@destroy']);
 });
 
 Route::group(['prefix' => 'equipeservico'], function()
