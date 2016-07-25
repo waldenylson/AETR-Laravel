@@ -53,12 +53,12 @@ $(document).ready(function()
 
         swal(
             {
-                title: "Deseja Mesmo Finalizar o Serviço?",
+                title: "Deseja Mesmo Finalizar?",
                 text: "Esta operação não poderá ser desfeita!",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Sim, Finalize-o!",
+                confirmButtonText: "Sim, Finalize!",
                 cancelButtonText: "Cancelar",
                 closeOnConfirm: false
             },

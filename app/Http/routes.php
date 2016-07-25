@@ -1,4 +1,14 @@
 <?php
+/**
+ *   Configuração das Rotas
+ *
+ *   index   - Lista Viaturas Cadastradas
+ *   create  - Carrega o Formulário para Cadastrar Viaturas
+ *   store   - Persiste os Dados no Banco
+ *   edit    - Carrega o Formulário com os Dados Cadastrados para edição
+ *   update  - Persiste os Dados Editados no Banco
+ *   destroy - Remove um Registro do Banco de Dados
+ */
 
 Route::get('/', ['middleware' => 'auth', 'uses' => 'HomeController@index']);
 
@@ -21,16 +31,6 @@ Route::group(['prefix' => 'seguranca', 'namespace' => 'Auth'], function()
     Route::post('login' , ['as' => 'seguranca.login' , 'uses' => 'AuthController@postLogin']);
 });
 
-/**
- *   Configuração das Rotas
- *
- *   index   - Lista Viaturas Cadastradas
- *   create  - Carrega o Formulário para Cadastrar Viaturas
- *   store   - Persiste os Dados no Banco
- *   edit    - Carrega o Formulário com os Dados Cadastrados para edição
- *   update  - Persiste os Dados Editados no Banco
- *   destroy - Remove um Registro do Banco de Dados
- */
 
 Route::group(['prefix' => 'viaturas'], function()
 //Route::group(['prefix' => 'viaturas', 'middleware' => 'auth'], function()
@@ -43,17 +43,6 @@ Route::group(['prefix' => 'viaturas'], function()
     Route::get('{id}/remover'    , ['as' => 'viaturas.destroy' , 'uses' => 'ViaturasController@destroy']);
 });
 
-
-/**
- *   Configuração das Rotas
- *
- *   index   - Lista Naturezas Cadastradas
- *   create  - Carrega o Formulário para Cadastrar Naturezas
- *   store   - Persiste os Dados no Banco
- *   edit    - Carrega o Formulário com os Dados Cadastrados para edição
- *   update  - Persiste os Dados Editados no Banco
- *   destroy - Remove um Registro do Banco de Dados
- */
 
 Route::group(['prefix' => 'naturezas'], function()
 //Route::group(['prefix' => 'naturezas', 'middleware' => 'auth'], function()
@@ -70,12 +59,13 @@ Route::group(['prefix' => 'naturezas'], function()
 Route::group(['prefix' => 'requisicao'], function()
 //Route::group(['prefix' => 'requisicao', 'middleware' => 'auth'], function()
 {
-    Route::get(''                , ['as' => 'requisicoes.index'               , 'uses' => 'RequisicoesController@index']);
-    Route::get('{id}/cadastrar'  , ['as' => 'requisicoes.create'              , 'uses' => 'RequisicoesController@create']);
-    Route::post('salvar'         , ['as' => 'requisicoes.store'               , 'uses' => 'RequisicoesController@store']);
-    Route::get('{id}/editar'     , ['as' => 'requisicoes.edit'                , 'uses' => 'RequisicoesController@edit']);
-    Route::post('{id}/atualizar' , ['as' => 'requisicoes.update'              , 'uses' => 'RequisicoesController@update']);
-    Route::get('{id}/remover'    , ['as' => 'requisicoes.destroy'             , 'uses' => 'RequisicoesController@destroy']);
+    Route::get(''                   , ['as' => 'requisicoes.index'    , 'uses' => 'RequisicoesController@index']);
+    Route::get('{id}/cadastrar'     , ['as' => 'requisicoes.create'   , 'uses' => 'RequisicoesController@create']);
+    Route::post('salvar'            , ['as' => 'requisicoes.store'    , 'uses' => 'RequisicoesController@store']);
+    Route::get('{id}/editar'        , ['as' => 'requisicoes.edit'     , 'uses' => 'RequisicoesController@edit']);
+    Route::post('{id}/atualizar'    , ['as' => 'requisicoes.update'   , 'uses' => 'RequisicoesController@update']);
+    Route::get('{id}/updateStatus'  , ['as' => 'requisicoes.updateStatus'  , 'uses' => 'EquipeServicoController@updateStatus']);
+    Route::get('{id}/remover'       , ['as' => 'requisicoes.destroy'  , 'uses' => 'RequisicoesController@destroy']);
 });
 
 Route::group(['prefix' => 'equipeservico'], function()

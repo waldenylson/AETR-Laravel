@@ -6,6 +6,9 @@ use App\Models\Requisicoes;
 
 class RequisicoesRepository implements RequisicoesRepositoryContract
 {
+    private $true  = 1;
+    private $false = 0;
+
     public function getAllRecords()
     {
         $requisicoes = Requisicoes::all();
@@ -53,5 +56,12 @@ class RequisicoesRepository implements RequisicoesRepositoryContract
         $requisicoes = Requisicoes::findOrFail($id);
 
         return $requisicoes->delete();
+    }
+
+    public function updateStatus($id)
+    {
+        $requisicao = Requisicoes::findOrFail($id)->update(['finalizada' => $this->true]);
+
+        return $requisicao;
     }
 }

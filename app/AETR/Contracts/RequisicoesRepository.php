@@ -12,4 +12,5 @@ interface RequisicoesRepository
     public function editRequisicao($id);
     public function updateRequisicao(StoreRequisicoesPostRequest $request, $id);
     public function destroyRequisicao($id);
+    public function updateStatus($id);
 }

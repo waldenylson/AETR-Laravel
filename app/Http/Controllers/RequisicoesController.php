@@ -44,7 +44,7 @@ class RequisicoesController extends Controller
     {
         $requisicoes = $this->requisicoesRepository->getAllRecordsWithRelacionamentos();
 
-        dd($requisicoes['viatura']);
+        //dd($requisicoes->requisitante);
 
         return view('requisicoes.index')->with(compact('requisicoes'));
     }
@@ -99,7 +99,7 @@ class RequisicoesController extends Controller
     {
         $requisicao      = $this->requisicoesRepository->editRequisicao($id);
 
-        dd($requisicao);
+        //dd($requisicao);
 
         $viaturas        = $this->viaturasRepository->getAllViaturasForSelect();
         $naturezas       = $this->naturezasRepository->getAllNaturezasForSelect();
