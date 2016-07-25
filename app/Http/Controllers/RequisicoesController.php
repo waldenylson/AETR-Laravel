@@ -131,6 +131,17 @@ class RequisicoesController extends Controller
         return redirect()->back()->with('error', 'Erro ao Tentar Atualizar o Registro!');
     }
 
+    public function updateStatus($id)
+    {
+        $result = $this->requisicoesRepository->updateStatus($id);
+
+        if ($result) {
+            return redirect()->back()->with('message', 'Requisição encerrada com Sucesso!');
+        }
+
+        return redirect()->back()->with('error', 'Erro ao Tentar Alterar o Status p/ Finalizado!');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

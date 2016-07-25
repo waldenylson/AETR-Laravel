@@ -2,7 +2,7 @@
 @section('content')
     <h2>
         <i class="fa fa-edit"></i>
-        Requisiçõess de Viatura Cadastradas
+        Requisições de Viatura Cadastradas
     </h2>
     <hr />
     @if(count($requisicoes) > 0)
@@ -51,11 +51,11 @@
                                 <i class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;Finalizada&nbsp;
                             </a>
 
-                            <a class="btn btn-info btn-xs">
+                            <a class="btn btn-primary btn-xs">
                                 <i class="fa fa-eye"></i>&nbsp;&nbsp;Visualizar&nbsp;
                             </a>
 
-                            <a class="btn btn-info btn-xs">
+                            <a class="btn btn-success btn-xs">
                                 <i class="fa fa-print"></i>&nbsp;&nbsp;Imprimir&nbsp;
                             </a>
                         @endif
