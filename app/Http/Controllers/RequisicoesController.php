@@ -78,7 +78,7 @@ class RequisicoesController extends Controller
      */
     public function store(StoreRequisicoesPostRequest $request)
     {
-        dd($request);
+        //dd($request);
 
         $result = $this->requisicoesRepository->storeRequisicao($request);
 

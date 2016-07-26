@@ -48,7 +48,7 @@ class Requisicoes extends Model
      */
     public function getDataInicioAttribute($value)
     {
-        return Carbon::parse($this->valueToCarbonObject($value))->format('d/m/Y');
+        if(!is_null($value)) return Carbon::parse($this->valueToCarbonObject($value))->format('d/m/Y');
     }
 
     /**
@@ -59,7 +59,7 @@ class Requisicoes extends Model
      */
     public function getDataChegadaAttribute($value)
     {
-        return Carbon::parse($this->valueToCarbonObject($value))->format('d/m/Y');
+        if(!is_null($value)) return Carbon::parse($this->valueToCarbonObject($value))->format('d/m/Y');
     }
 
     /**
@@ -70,7 +70,7 @@ class Requisicoes extends Model
      */
     public function setDataInicioAttribute($value)
     {
-        $this->attributes['data_inicio'] = $this->valueToCarbonObject($value);
+        if(!is_null($value)) $this->attributes['data_inicio'] = $this->valueToCarbonObject($value);
     }
 
     /**
@@ -81,6 +81,6 @@ class Requisicoes extends Model
      */
     public function setDataChegadaAttribute($value)
     {
-        $this->attributes['data_chegada'] = $this->valueToCarbonObject($value);
+        if(!is_null($value)) $this->attributes['data_chegada'] = $this->valueToCarbonObject($value);
     }
 }

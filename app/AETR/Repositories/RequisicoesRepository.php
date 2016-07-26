@@ -25,13 +25,15 @@ class RequisicoesRepository implements RequisicoesRepositoryContract
 
     public function getUltimoOdometroViatura($viatura_id)
     {
-        $requisicao = Requisicoes::where('viatura_id', $viatura_id)->orderBy('id', 'asc')->first();
+        $requisicao = Requisicoes::where('viatura_id', $viatura_id)->orderBy('id', 'desc')->first();
 
         return ($requisicao instanceof Requisicoes) ? $requisicao->odometro_chegada : null;
     }
 
     public function storeRequisicao(StoreRequisicoesPostRequest $request)
     {
+        //dd($request);
+
         $requisicoes = Requisicoes::create($request->all());
 
         return $requisicoes;
