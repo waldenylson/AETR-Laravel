@@ -44,8 +44,6 @@ class RequisicoesController extends Controller
     {
         $requisicoes = $this->requisicoesRepository->getAllRecordsWithRelacionamentos();
 
-        //dd($requisicoes->requisitante);
-
         return view('requisicoes.index')->with(compact('requisicoes'));
     }
 
@@ -60,8 +58,6 @@ class RequisicoesController extends Controller
         $naturezas       = $this->naturezasRepository->getAllNaturezasForSelect();
         $equipe          = $this->equipeRepository->getAllRecordsOpen();
         $ultimoOdometro  = $this->requisicoesRepository->getUltimoOdometroViatura($viatura_id);
-
-        //dd($ultimoOdometro);
 
         return view('requisicoes.create')->with(compact('viaturas'))
                                          ->with(compact('naturezas'))
@@ -99,13 +95,9 @@ class RequisicoesController extends Controller
     {
         $requisicao      = $this->requisicoesRepository->editRequisicao($id);
 
-        //dd($requisicao);
-
         $viaturas        = $this->viaturasRepository->getAllViaturasForSelect();
         $naturezas       = $this->naturezasRepository->getAllNaturezasForSelect();
         $equipe          = $this->equipeRepository->getOneRecordOnly($requisicao->equipe_servico_id);
-
-        //dd($equipe);
 
         return view('requisicoes.edit')->with(compact('requisicao'))
                                        ->with(compact('viaturas'))
@@ -157,5 +149,10 @@ class RequisicoesController extends Controller
         }
 
         return redirect()->back()->with('error', 'Erro ao Tentar Remover o Registro!');
+    }
+
+    public function printRequisicao($id)
+    {
+        return view('requisicoes.print');
     }
 }

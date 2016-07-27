@@ -66,6 +66,7 @@ Route::group(['prefix' => 'requisicao'], function()
     Route::post('{id}/atualizar'    , ['as' => 'requisicoes.update'        , 'uses' => 'RequisicoesController@update']);
     Route::get('{id}/updateStatus'  , ['as' => 'requisicoes.updateStatus'  , 'uses' => 'RequisicoesController@updateStatus']);
     Route::get('{id}/remover'       , ['as' => 'requisicoes.destroy'       , 'uses' => 'RequisicoesController@destroy']);
+    Route::get('{id}/imprimir'      , ['as' => 'requisicoes.print'         , 'uses' => 'RequisicoesController@printRequisicao']);
 });
 
 Route::group(['prefix' => 'equipeservico'], function()
