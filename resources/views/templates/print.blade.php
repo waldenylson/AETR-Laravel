@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>AETR - Controle Online de Viaturas</title>
     {{--<link rel="stylesheet" href="{!! asset('bower_components/bootstrap/dist/css/bootstrap.css') !!}">--}}
-    <link rel="stylesheet" href="{!! asset('styles/vital.min.css') !!}">
+    <link rel="stylesheet" href="{!! asset('bower_components/bulma/css/bulma.css') !!}">
+    <link rel="stylesheet" href="{!! asset('bower_components/bulma/css/bulma.css.map') !!}">
     <link rel="stylesheet" href="{!! asset('bower_components/font-awesome/css/font-awesome.css') !!}">
 
     <style>body{margin-top: 10px;}</style>
