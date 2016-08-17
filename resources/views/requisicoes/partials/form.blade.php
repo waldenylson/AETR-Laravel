@@ -8,7 +8,7 @@
     </div>
 @endif
 
-<div class="form-group well matheus">
+<div class="form-group well">
     <div class="row">
         <div class="col-md-2">
             {!! Form::label('id', 'Número', ['class' => 'control-label']) !!}
