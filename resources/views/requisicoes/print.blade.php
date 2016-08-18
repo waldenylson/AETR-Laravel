@@ -11,23 +11,43 @@
                     <div class="center">AETR</div>
                 </p>
 
-                <p class="center"><strong>FICHA RE REQUISIÇÃO E DESPACHO DE VIATURA</strong></p>
+                <p class="center"><strong>FICHA DE REQUISIÇÃO E DESPACHO DE VIATURA</strong></p>
             </div>
         </div><br><br>
 
         <table class="table is-bordered">
+            <thead class="teste">
+                <tr>
+                    <th><strong class="font-print-request">NÚMERO</strong></th>
+                    <th><strong class="font-print-request">REQUISITANTE</strong></th>
+                    <th><strong class="font-print-request">SETOR</strong></th>
+                    <th><strong class="font-print-request">RAMAL</strong></th>
+                </tr>
+            </thead>
             <tr>
-                <td>Número: 1234</td>
-                <td>Requisitante: TCEL LUIZ CARLOS</td>
-                <td>Setor: PROTOCOLO</td>
-                <td>Ramal: 8068</td>
-            </tr>
-            <tr>
-                <td>Natureza: TRANSPORTE MILITAR BCT</td>
-                <td>Destino: BOA VIAGEM / PRAZERES</td>
-                <td>Apresentar-se: TCEL LUIZ CARLOS</td>
+                <td>1234</td>
+                <td>TCEL LUIZ CARLOS</td>
+                <td>PROTOCOLO</td>
+                <td>8068</td>
             </tr>
         </table>
+
+        <table class="table is-bordered">
+            <thead>
+                <tr>
+                    <th>NATUREZA</th>
+                    <th>DESTINO</th>
+                    <th>APRESENTAR-SE</th>
+                </tr>
+            </thead>
+            <tr>
+                <td><strong class="font-print-request">TRANSPORTE MILITAR BCT</strong></td>
+                <td><strong class="font-print-request">BOA VIAGEM / PRAZERES</strong></td>
+                <td><strong class="font-print-request">TCEL LUIZ CARLOS</strong></td>
+            </tr>
+        </table>
+
+        <hr>
 
         <table class="table is-striped">
             <tr>
