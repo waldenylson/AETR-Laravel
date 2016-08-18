@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{!! asset('bower_components/bulma/css/bulma.css.map') !!}">
     <link rel="stylesheet" href="{!! asset('bower_components/font-awesome/css/font-awesome.css') !!}">
 
-    <style>body{margin-top: 10px; -webkit-print-color-adjust: exact; -moz-}</style>
+    <style>body{margin-top: 10px; -webkit-print-color-adjust: exact;}</style>
 </head>
 <body class="container">
 @yield('content')

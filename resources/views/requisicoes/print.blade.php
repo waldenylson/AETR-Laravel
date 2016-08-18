@@ -5,7 +5,7 @@
 
         <div class="columns">
             <div class="column">
-                <p class="title is-6">
+                <p class="title">
                     <div class="center">COMANDO DA AERONÁUTICA</div>
                     <div class="center">CINDACTA III</div>
                     <div class="center">AETR</div>
@@ -16,7 +16,7 @@
         </div><br><br>
 
         <table class="table is-bordered">
-            <thead class="teste">
+            <thead>
                 <tr>
                     <th><strong class="font-print-request">NÚMERO</strong></th>
                     <th><strong class="font-print-request">REQUISITANTE</strong></th>
@@ -24,7 +24,7 @@
                     <th><strong class="font-print-request">RAMAL</strong></th>
                 </tr>
             </thead>
-            <tr>
+            <tr class="text-color-priv">
                 <td>1234</td>
                 <td>TCEL LUIZ CARLOS</td>
                 <td>PROTOCOLO</td>
@@ -35,21 +35,23 @@
         <table class="table is-bordered">
             <thead>
                 <tr>
-                    <th>NATUREZA</th>
-                    <th>DESTINO</th>
-                    <th>APRESENTAR-SE</th>
+                    <th><strong class="font-print-request">DATA</strong></th>
+                    <th><strong class="font-print-request">DESTINO</strong></th>
+                    <th><strong class="font-print-request">NATUREZA</strong></th>
+                    <th><strong class="font-print-request">APRESENTAR-SE</strong></th>
                 </tr>
             </thead>
-            <tr>
-                <td><strong class="font-print-request">TRANSPORTE MILITAR BCT</strong></td>
-                <td><strong class="font-print-request">BOA VIAGEM / PRAZERES</strong></td>
-                <td><strong class="font-print-request">TCEL LUIZ CARLOS</strong></td>
+            <tr class="text-color-priv">
+                <td class="">20/08/2016</td>
+                <td>BOA VIAGEM / PRAZERES</td>
+                <td>TRANSPORTE MILITAR BCT</td>
+                <td>TCEL LUIZ CARLOS</td>
             </tr>
         </table>
 
-        <hr>
+        <hr class="tracejado">
 
-        <table class="table is-striped">
+        <table class="table is-striped is-bordered">
             <tr>
                 <td>Viatura: 1234</td>
                 <td>Odômetro Saída: 123456</td>
