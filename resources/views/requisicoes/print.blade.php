@@ -16,36 +16,36 @@
         </div><br><br>
 
         <table class="table is-bordered">
-            <thead>
-                <tr>
-                    <th><strong class="font-print-request">NÚMERO</strong></th>
-                    <th><strong class="font-print-request">REQUISITANTE</strong></th>
-                    <th><strong class="font-print-request">SETOR</strong></th>
-                    <th><strong class="font-print-request">RAMAL</strong></th>
+            <thead class="tableHeader">
+                <tr class="titulo">
+                    <th class="firstColumn"><strong class="font-print-request">NÚMERO</strong></th>
+                    <th class="secondColumn"><strong class="font-print-request">REQUISITANTE</strong></th>
+                    <th class="thirdColumn"><strong class="font-print-request">SETOR</strong></th>
+                    <th class="fourthColumn"><strong class="font-print-request">RAMAL</strong></th>
                 </tr>
             </thead>
             <tr class="text-color-priv">
-                <td>1234</td>
-                <td>TCEL LUIZ CARLOS</td>
-                <td>PROTOCOLO</td>
-                <td>8068</td>
+                <td>{{ strtoupper($requisicao->id)           }}</td>
+                <td>{{ strtoupper($requisicao->requisitante) }}</td>
+                <td>{{ strtoupper($requisicao->setor)        }}</td>
+                <td>{{ strtoupper($requisicao->ramal)        }}</td>
             </tr>
         </table>
 
         <table class="table is-bordered">
-            <thead>
+            <thead  class="tableHeader">
                 <tr>
-                    <th><strong class="font-print-request">DATA</strong></th>
-                    <th><strong class="font-print-request">DESTINO</strong></th>
-                    <th><strong class="font-print-request">NATUREZA</strong></th>
-                    <th><strong class="font-print-request">APRESENTAR-SE</strong></th>
+                    <th class="firstColumn"><strong class="font-print-request">DATA</strong></th>
+                    <th class="secondColumn"><strong class="font-print-request">DESTINO</strong></th>
+                    <th class="thirdColumn"><strong class="font-print-request">NATUREZA</strong></th>
+                    <th class="fourthColumn"><strong class="font-print-request">APRESENTAR-SE</strong></th>
                 </tr>
             </thead>
             <tr class="text-color-priv">
-                <td class="">20/08/2016</td>
-                <td>BOA VIAGEM / PRAZERES</td>
-                <td>TRANSPORTE MILITAR BCT</td>
-                <td>TCEL LUIZ CARLOS</td>
+                <td>{{ strtoupper($requisicao->data_inicio)      }}</td>
+                <td>{{ strtoupper($requisicao->destino)          }}</td>
+                <td>{{ strtoupper($requisicao->natureza->titulo) }}</td>
+                <td>{{ strtoupper($requisicao->apresentar_se)    }}</td>
             </tr>
         </table>
 
@@ -53,25 +53,46 @@
 
         <table class="table is-striped is-bordered">
             <tr>
-                <td>Viatura: 1234</td>
-                <td>Odômetro Saída: 123456</td>
+                <td><strong class="font-print-request">VIATURA:</strong> {{ $requisicao->viatura->id }}</td>
+                <td><strong class="font-print-request">ODÔMETRO SAÍDA:</strong> {{ $requisicao->odometro_saida }}</td>
             </tr>
             <tr>
-                <td>Reg FAB: 14 DP 102</td>
-                <td>Hora Saída: 14:30</td>
+                <td><strong class="font-print-request">REG FAB:</strong> {{ $requisicao->viatura->reg_fab }}</td>
+                <td><strong class="font-print-request">HORA SAÍDA:</strong> {{ $requisicao->hora_saida }}</td>
             </tr>
             <tr>
-                <td>Placa: KKK 1111</td>
-                <td>Odômetro Chegada: 123456</td>
+                <td><strong class="font-print-request">PLACA:</strong> {{ $requisicao->viatura->placa }}</td>
+                <td><strong class="font-print-request">ODÔMETRO CHEGADA:</strong> {{ $requisicao->odometro_saida }}</td>
             </tr>
             <tr>
-                <td>Motorista: 3S WALDENYLSON SILVA</td>
-                <td>Hora Chegada: 14:30</td>
+                <td><strong class="font-print-request">MOTORISTA:</strong>
+                    {!!
+                        !isEmpty($requisicao->motorista_externo_sv)
+                            ? $requisicao->motorista_externo_sv
+                            : $requisicao->equipe->motorista1
+                    !!}
+                </td>
+                <td><strong class="font-print-request">HORA CHEGADA:</strong> {{$requisicao->hora_chegada}}</td>
             </tr>
             <tr>
-                <td>Despachante: 3S WALDENYLSON SILVA</td>
-                <td>Assinatura:_________________________________</td>
+                <td><strong class="font-print-request">DESPACHANTE:</strong> {{ $requisicao->equipe->despachante }}</td>
+                <td><strong class="font-print-request">ASSINATURA:</strong></td>
             </tr>
         </table>
+
+        <hr class="tracejado">
+
+        <div class="boxx">
+
+            <div class="box-assinatura">
+                <div class="center">
+                    <div class="teste">
+                        <p>Borges Cap R1</p>
+                        <p>Chefe da AETR</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 @stop

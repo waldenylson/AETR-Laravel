@@ -7,6 +7,7 @@ interface RequisicoesRepository
 {
     public function getAllRecords();
     public function getAllRecordsWithRelacionamentos();
+    public function getRequisicaoWithRelacionamentos($id);
 
     public function getUltimoOdometroViatura($viatura_id);
     public function storeRequisicao(StoreRequisicoesPostRequest $request);

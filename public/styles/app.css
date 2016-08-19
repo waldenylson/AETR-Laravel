@@ -5,3 +5,16 @@
 .font-print-request{font-size: 14px}
 .text-color-priv{color: #84878b}
 .tracejado{border-top:1px dashed #ccc}
+.firstColumn{width: 15%}
+.secondColumn{width: 30%}
+.thirdColumn{width: 30%}
+.fourthColumn{width: 25%}
+.tableHeader{background-color: #e7eaee}
+.box-assinatura{
+    width: 200px;
+    height: 100px;
+    border: 1px solid silver;
+}
+.teste{
+    margin-top: 55px;
+}

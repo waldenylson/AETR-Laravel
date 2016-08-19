@@ -23,6 +23,13 @@ class RequisicoesRepository implements RequisicoesRepositoryContract
         return $requisicoes->load('viatura', 'natureza');
     }
 
+    public function getRequisicaoWithRelacionamentos($id)
+    {
+        $requisicao = Requisicoes::findOrFail($id);
+
+        return $requisicao->load('viatura', 'natureza', 'equipe');
+    }
+
     public function getUltimoOdometroViatura($viatura_id)
     {
         $requisicao = Requisicoes::where('viatura_id', $viatura_id)->orderBy('id', 'desc')->first();

@@ -153,6 +153,8 @@ class RequisicoesController extends Controller
 
     public function printRequisicao($id)
     {
-        return view('requisicoes.print');
+        $requisicao = $this->requisicoesRepository->getRequisicaoWithRelacionamentos($id);
+
+        return view('requisicoes.print')->with(compact('requisicao'));
     }
 }
