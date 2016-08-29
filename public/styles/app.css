@@ -15,6 +15,10 @@
     height: 100px;
     border: 1px solid silver;
 }
-.teste{
+.box-assinatura-legenda{
     margin-top: 55px;
+}
+
+.form-disable{
+    disabled: disabled;
 }

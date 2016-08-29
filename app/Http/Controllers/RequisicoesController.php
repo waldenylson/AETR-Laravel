@@ -157,4 +157,13 @@ class RequisicoesController extends Controller
 
         return view('requisicoes.print')->with(compact('requisicao'));
     }
+
+    public function viewRequisicao($id)
+    {
+        $requisicao = $this->requisicoesRepository->getRequisicaoWithRelacionamentos($id);
+
+        var_dump($requisicao);
+
+        return view('requisicoes.view')->with(compact('requisicao'));
+    }
 }

@@ -43,7 +43,7 @@
                                 <i class="fa fa-eye"></i>&nbsp;&nbsp;Visualizar&nbsp;
                             </a>
 
-                            <a class="btn btn-info btn-xs">
+                            <a href="{!! route('requisicoes.print', $requisicao->id) !!}" class="btn btn-info btn-xs">
                                 <i class="fa fa-print"></i>&nbsp;&nbsp;Imprimir&nbsp;
                             </a>
                         @else
@@ -51,7 +51,7 @@
                                 <i class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;Finalizada&nbsp;
                             </a>
 
-                            <a class="btn btn-primary btn-xs">
+                            <a href="{!! route('requisicoes.view', $requisicao->id) !!}"class="btn btn-primary btn-xs">
                                 <i class="fa fa-eye"></i>&nbsp;&nbsp;Visualizar&nbsp;
                             </a>
 

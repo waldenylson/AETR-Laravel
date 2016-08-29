@@ -1,7 +1,7 @@
 @extends('templates.print')
 @section('content')
 
-    <div class="box" style="margin-top: 10px">
+    <div class="boxx" style="margin-top: 10px">
 
         <div class="columns">
             <div class="column">
@@ -67,7 +67,7 @@
             <tr>
                 <td><strong class="font-print-request">MOTORISTA:</strong>
                     {!!
-                        !isEmpty($requisicao->motorista_externo_sv)
+                        !empty($requisicao->motorista_externo_sv)
                             ? $requisicao->motorista_externo_sv
                             : $requisicao->equipe->motorista1
                     !!}
@@ -86,9 +86,9 @@
 
             <div class="box-assinatura">
                 <div class="center">
-                    <div class="teste">
-                        <p>Borges Cap R1</p>
+                    <div class="box-assinatura-legenda">
                         <p>Chefe da AETR</p>
+                        <p>Oficial de Dia</p>
                     </div>
                 </div>
             </div>
