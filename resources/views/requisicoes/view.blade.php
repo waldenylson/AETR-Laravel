@@ -1,17 +1,17 @@
 @extends('templates.fancyboxContent')
 @section('content')
     <h2>
-        <i class="fa fa-edit"></i>
-        Preencher Requisição Viatura
+        <i class="fa fa-eye"></i>
+        Visualizar Requisição Viatura
     </h2>
     <hr />
-    {!! Form::model($requisicao, ['route' => ['requisicoes.update', $requisicao->id], 'class' => 'form-disable']) !!}
-    @include('requisicoes.partials.form')
-    <button class="btn btn-primary" type="submit">
-        <i class="fa fa-save"></i>&nbsp;&nbsp;Salvar
-    </button>
-    <button class="btn btn-danger fancybox-item fancybox-close" id="btn-cancelar" type="button">
-        <i class="fa fa-remove"></i>&nbsp;&nbsp;Cancelar
-    </button>
+    {!! Form::model($requisicao, ['class' => 'form-disable']) !!}
+    @include('requisicoes.partials.form-view')
+    <a href="{!! route('requisicoes.print', $requisicao->id) !!}" class="btn btn-success btn-xs">
+        <i class="fa fa-print"></i>&nbsp;&nbsp;Imprimir&nbsp;
+    </a>
+    <a id="btn-cancelar" class="btn btn-warning btn-xs">
+        <i class="fa fa-close"></i>&nbsp;&nbsp;Cancelar&nbsp;&nbsp;&nbsp;
+    </a>
     {!! Form::close() !!}
 @stop

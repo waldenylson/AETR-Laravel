@@ -2,7 +2,7 @@
 @section('content')
     <h2>
         <i class="fa fa-edit"></i>
-        Requisições de Viatura Cadastradas
+        Requisições de Viatura {!! ($tipo == 0) ? 'Abertas' : 'Fechadas' !!}
     </h2>
     <hr />
     @if(count($requisicoes) > 0)
@@ -39,11 +39,11 @@
                                 <i class="fa fa-power-off"></i>&nbsp;&nbsp;Finalizar&nbsp;&nbsp;&nbsp;
                             </a>
 
-                            <a class="btn btn-info btn-xs">
+                            <a href="{!! route('requisicoes.view', $requisicao->id) !!}" class="btn btn-info btn-xs">
                                 <i class="fa fa-eye"></i>&nbsp;&nbsp;Visualizar&nbsp;
                             </a>
 
-                            <a href="{!! route('requisicoes.print', $requisicao->id) !!}" class="btn btn-info btn-xs">
+                            <a href="{!! route('requisicoes.print', $requisicao->id) !!}" class="btn btn-success btn-xs">
                                 <i class="fa fa-print"></i>&nbsp;&nbsp;Imprimir&nbsp;
                             </a>
                         @else
@@ -51,11 +51,11 @@
                                 <i class="fa fa-thumbs-o-up"></i>&nbsp;&nbsp;Finalizada&nbsp;
                             </a>
 
-                            <a href="{!! route('requisicoes.view', $requisicao->id) !!}"class="btn btn-primary btn-xs">
+                            <a href="{!! route('requisicoes.view', $requisicao->id) !!}" class="btn btn-primary btn-xs">
                                 <i class="fa fa-eye"></i>&nbsp;&nbsp;Visualizar&nbsp;
                             </a>
 
-                            <a class="btn btn-success btn-xs">
+                            <a href="{!! route('requisicoes.print', $requisicao->id) !!}" class="btn btn-success btn-xs">
                                 <i class="fa fa-print"></i>&nbsp;&nbsp;Imprimir&nbsp;
                             </a>
                         @endif

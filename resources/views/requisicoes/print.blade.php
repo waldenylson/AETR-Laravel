@@ -69,7 +69,7 @@
                     {!!
                         !empty($requisicao->motorista_externo_sv)
                             ? $requisicao->motorista_externo_sv
-                            : $requisicao->equipe->motorista1
+                            : $requisicao->equipe->motorista1 . ' / ' . $requisicao->equipe->motorista2
                     !!}
                 </td>
                 <td><strong class="font-print-request">HORA CHEGADA:</strong> {{$requisicao->hora_chegada}}</td>
