@@ -6,7 +6,7 @@ use App\Http\Requests\StoreRequisicoesPostRequest;
 interface RequisicoesRepository
 {
     public function getAllRecords();
-    public function getAllRecordsWithRelacionamentos();
+    public function getAllRecordsWithRelacionamentos($tipo);
     public function getRequisicaoWithRelacionamentos($id);
 
     public function getUltimoOdometroViatura($viatura_id);

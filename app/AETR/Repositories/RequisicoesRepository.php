@@ -16,9 +16,9 @@ class RequisicoesRepository implements RequisicoesRepositoryContract
         return $requisicoes;
     }
 
-    public function getAllRecordsWithRelacionamentos()
+    public function getAllRecordsWithRelacionamentos($tipo)
     {
-        $requisicoes = Requisicoes::all();
+        $requisicoes = Requisicoes::where('finalizada', $tipo)->get();
 
         return $requisicoes->load('viatura', 'natureza');
     }

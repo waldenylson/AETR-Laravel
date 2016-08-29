@@ -11,6 +11,8 @@ use App\Http\Requests\StoreRequisicoesPostRequest;
 
 class RequisicoesController extends Controller
 {
+    private $true  = 1;
+    private $false = 0;
 
     /**
      * @var $viaturasRepository Instancia da Classe ViaturasRepository
@@ -42,9 +44,11 @@ class RequisicoesController extends Controller
      */
     public function index()
     {
-        $requisicoes = $this->requisicoesRepository->getAllRecordsWithRelacionamentos();
+        $tipo        = $this->false;
 
-        return view('requisicoes.index')->with(compact('requisicoes'));
+        $requisicoes = $this->requisicoesRepository->getAllRecordsWithRelacionamentos($tipo);
+
+        return view('requisicoes.index')->with(compact('requisicoes'))->with(compact('tipo'));
     }
 
     /**
@@ -162,8 +166,13 @@ class RequisicoesController extends Controller
     {
         $requisicao = $this->requisicoesRepository->getRequisicaoWithRelacionamentos($id);
 
-        var_dump($requisicao);
+        $viaturas        = $this->viaturasRepository->getAllViaturasForSelect();
+        $naturezas       = $this->naturezasRepository->getAllNaturezasForSelect();
+        $equipe          = $this->equipeRepository->getOneRecordOnly($requisicao->equipe_servico_id);
 
-        return view('requisicoes.view')->with(compact('requisicao'));
+        return view('requisicoes.view')->with(compact('requisicao'))
+            ->with(compact('viaturas'))
+            ->with(compact('naturezas'))
+            ->with(compact('equipe'));
     }
 }
