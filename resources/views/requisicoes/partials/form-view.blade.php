@@ -115,7 +115,7 @@
             {!!
                 (!empty($requisicao->motorista_externo_sv)) ? Form::text('motorista_externo_sv', $requisicao->motorista_externo_sv,
                                                                 ['class' => 'form-control', 'id' => 'motorista_externo_sv', 'disabled', 'readonly'])
-                                                          : Form::text('motorista_externo_sv', $requisicao->equipe->motorista1 . ' / ' . $requisicao->equipe->motorista2,
+                                                            : Form::text('motorista_externo_sv', $requisicao->equipe->motorista1 . ' / ' . $requisicao->equipe->motorista2,
                                                                 ['class' => 'form-control', 'id' => 'motorista_externo_sv', 'disabled', 'readonly'])
             !!}
 

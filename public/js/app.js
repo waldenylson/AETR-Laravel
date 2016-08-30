@@ -76,6 +76,6 @@ $(document).ready(function()
         parent.$.fancybox.close();
     });
 
-    CKEDITOR.config.height = 90;
+    CKEDITOR.config.height = 80;
     CKEDITOR.replaceAll();
 });
