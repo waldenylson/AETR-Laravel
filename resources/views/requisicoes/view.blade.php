@@ -7,7 +7,7 @@
     <hr />
     {!! Form::model($requisicao, ['class' => 'form-disable']) !!}
     @include('requisicoes.partials.form-view')
-    <a href="{!! route('requisicoes.print', $requisicao->id) !!}" class="btn btn-success btn-xs">
+    <a href="{!! route('requisicoes.print', $requisicao->id) !!}" target="_blank" class="btn btn-success btn-xs">
         <i class="fa fa-print"></i>&nbsp;&nbsp;Imprimir&nbsp;
     </a>
     <a id="btn-cancelar" class="btn btn-warning btn-xs">

@@ -53,7 +53,7 @@
 
         <table class="table is-striped is-bordered">
             <tr>
-                <td><strong class="font-print-request">VIATURA:</strong> {{ $requisicao->viatura->id }}</td>
+                <td><strong class="font-print-request">VIATURA:</strong> {{ $requisicao->viatura->modelo }}</td>
                 <td><strong class="font-print-request">ODÔMETRO SAÍDA:</strong> {{ $requisicao->odometro_saida }}</td>
             </tr>
             <tr>
