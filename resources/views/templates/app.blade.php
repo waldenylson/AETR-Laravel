@@ -49,8 +49,7 @@
 
                         <li><a href="javascript;"><h7><i class="fa fa-user">&nbsp;&nbsp;USUÁRIOS&nbsp;&nbsp;</i></h7></a>
                             <ul class="dropdown-menu">
-                                <li><a class="fancybox" href="{{ route('seguranca.relacionar') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Cadastrar</i></a></li>
-                                <li><a class="fancybox" href="#">&nbsp;&nbsp;<i class="fa fa-search">&nbsp;&nbsp;Localisar</i></a></li>
+                                <li><a class="fancybox" href="{{ route('seguranca.relacionar') }}">&nbsp;&nbsp;<i class="fa fa-save">&nbsp;&nbsp;Criar / Excluir Relacionamento</i></a></li>
                             </ul>
                         </li>
                     </ul>

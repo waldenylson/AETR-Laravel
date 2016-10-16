@@ -82,8 +82,14 @@
 
         <hr class="tracejado">
 
-        <div class="boxx">
+        <tr>
+            <td class="center"><strong>OBSERVAÇÕES</strong></td><br><br>
+            <td><p>{!! $requisicao->observacoes !!}</p></td>
+        </tr>
 
+        <hr class="tracejado">
+
+        <div>
             <div class="box-assinatura">
                 <div class="center">
                     <div class="box-assinatura-legenda">
@@ -92,7 +98,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 @stop
